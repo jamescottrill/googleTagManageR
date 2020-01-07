@@ -1,0 +1,10 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.httr-oauth
+.Rbuildignore
+R/gtm_auth-private.R
+R/development.R
+.DS_Store
+*.rds

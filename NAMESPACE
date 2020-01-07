@@ -1,0 +1,8 @@
+exportPattern("^[^\\.].*")
+import(googleAuthR)
+import(assertthat)
+importFrom(dplyr,bind_cols)
+importFrom(dplyr,bind_rows)
+importFrom(dplyr,distinct)
+importFrom(purrr,walk)
+importFrom(utils,menu)
