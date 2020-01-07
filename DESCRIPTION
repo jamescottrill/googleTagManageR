@@ -1,9 +1,10 @@
-Package: googleTagMangeR
+Package: googleTagManageR
 Type: Package
 Title: Access the Google Tag Manager API using R
 Version: 0.1.1
 Authors@R: c(person("James", "Cottrill",email="james@jamescottrill.co.uk", role=c("aut","cre")),
-                person("Mark","Edmondson", email = "m@sunholo.com", role="ctb")
+                person("Mark","Edmondson", email = "m@sunholo.com", role="ctb"),
+                person("Manos","Parzakonis", email = "parzakonis.m@gmail.com", role="ctb")
             )
 Description: Allows programmatic updating of GTM via the API.
 Depends:
