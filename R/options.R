@@ -44,7 +44,7 @@
                                     environment_var = "GARGLE_EMAIL")
   # for json files
   googleAuthR::gar_attach_auto_auth(needed, 
-                                    environment_var = "GA_AUTH_FILE")
+                                    environment_var = "GTM_AUTH_FILE")
   
   invisible()
   
