@@ -1,8 +1,16 @@
-#' Manage containers in GTM
-#' API Documentation from @seealso https://developers.google.com/tag-manager/api/v2/reference/accounts/containers
+#' List all containers in an account
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/containers}
 #' @family container functions
+#' 
+#' @param account_id Account Id
+#'
+#' @description
+#'
+#' This returns a dataframe containing all the containers in an account
+#' If you want to get the information for a single container, use \code{gtm_containers_get}
+#' 
 #' @export
-
 gtm_containers_list <- function(account_id) {
   
   path_args <- list(
@@ -14,6 +22,20 @@ gtm_containers_list <- function(account_id) {
   return(res)
 }
 
+#' Gets the metadata for a single container in GTM
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/containers}
+#' @family container functions
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#'
+#' @description
+#'
+#' This returns a list containing all the metadata about a single container.
+#' If you want to get the information for all containers, use \code{gtm_containers_list}
+#' 
+#'  @export
 gtm_containers_get <- function(account_id, container_id) {
   
   path_args <- list(
@@ -25,6 +47,22 @@ gtm_containers_get <- function(account_id, container_id) {
   return(res)
 }
 
+#' Creates a new container in an acount
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/containers}
+#' @family container functions
+#' 
+#' @param account_id Account Id
+#' @param name Container Name
+#' @param type Container Use Type
+#' @param domain_name List of domain names associated with the Container.
+#' @param notes Container Notes.
+#'
+#' @description
+#'
+#' This creates a new container in the specified account.
+#' 
+#'  @export
 gtm_containers_create <- function(account_id, 
                                   name, 
                                   type = c('web', 'iosSdk5', 'androidSdk5', 'amp'), 
@@ -59,7 +97,24 @@ gtm_containers_create <- function(account_id,
    return(res)
   }
 
-
+#' Updates a GTM Container
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/containers}
+#' @family container functions
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param name Container Name
+#' @param type Container Use Type
+#' @param domain_name List of domain names associated with the Container.
+#' @param notes Container Notes.
+#'
+#' @description
+#'
+#' This updates a GTM Container.
+#' Although you can't change the type of container, it is still required for this function to work.
+#' 
+#'  @export
 gtm_containers_update <-function(account_id,
                                  container_id,
                                  name,
@@ -95,6 +150,21 @@ gtm_containers_update <-function(account_id,
     return(res)
   }
 
+#' Deletes an existing GTM Container.
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/containers}
+#' @family container functions
+#' @importFrom utils menu
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param force Force deletion without user input
+#'
+#' @description
+#'
+#' This deletes a GTM container from an account. This is an irreversible process, so it's recommended that you first back up the container.
+#' 
+#'  @export
 gtm_containers_delete <- function(account_id, container_id, force = c("TRUE","FALSE")) {
     
   if (any(missing(account_id),

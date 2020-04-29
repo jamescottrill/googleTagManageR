@@ -1,10 +1,18 @@
-#' Manage Triggers in GTM
+#' List all triggers in a workspace
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/list}
+#' @family trigger structure functions
+#' 
+#' @description
 #'
-#' @seealso https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers
-#' @family trigger functions
+#' This will return a data frame all your available triggers in a given workspace
+#' If you want to get the information for a single trigger, use \code{gtm_triggers_get}
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' 
 #' @export
-
-
 gtm_triggers_list <- function(account_id, container_id, workspace_id) {
   
   if (any(missing(account_id),
@@ -24,6 +32,22 @@ gtm_triggers_list <- function(account_id, container_id, workspace_id) {
   return(res)
 }
 
+#' List a single trigger in a workspace
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/get}
+#' @family trigger structure functions
+#' 
+#' @description
+#'
+#' This will return a list with the settings of a single trigger.
+#' If you want to get the information for all triggers, use \code{gtm_triggers_list}
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' @param trigger_id trigger Id
+#' 
+#' @export
 gtm_triggers_get <- function(account_id, container_id, workspace_id, trigger_id) {
   
   if (any(missing(account_id),
@@ -43,6 +67,21 @@ gtm_triggers_get <- function(account_id, container_id, workspace_id, trigger_id)
   return(res)
 }
 
+#' Create a new trigger
+#'
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/create}
+#' @family trigger structure functions
+#' 
+#' @description
+#'
+#' This takes a trigger resource and creates a new trigger in GTM.
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' @param trigger_object trigger Object
+#' 
+#' @export
 gtm_triggers_create <- function(account_id, container_id, workspace_id, trigger_object) {
 
   if (any(missing(account_id),
@@ -67,6 +106,22 @@ gtm_triggers_create <- function(account_id, container_id, workspace_id, trigger_
 }
 
 
+#' Update an existing trigger
+#'
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/update}
+#' @family trigger structure functions
+#' 
+#' @description
+#'
+#' This takes a trigger resource and overwrites the existing trigger in GTM
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' @param trigger_id trigger Id
+#' @param trigger_object trigger Object
+#' 
+#' @export
 gtm_triggers_update <- function(account_id, container_id, workspace_id, trigger_id, trigger_object) {
   
   if (any(missing(account_id),
@@ -90,6 +145,22 @@ gtm_triggers_update <- function(account_id, container_id, workspace_id, trigger_
   return(res)
 }
 
+#' Delete a trigger
+#'
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/delete}
+#' @family trigger structure functions
+#' 
+#' @description
+#'
+#' This deletes a trigger in a GTM workspace
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' @param trigger_id trigger Id
+#' @param force Force deletion without user input
+#' 
+#' @export
 gtm_triggers_delete <- function(account_id, container_id, workspace_id, trigger_id, force = c(TRUE,FALSE)) {
 
       if(any(missing(account_id),
@@ -131,6 +202,21 @@ gtm_triggers_delete <- function(account_id, container_id, workspace_id, trigger_
     }
   }
 
+#' Reverts a trigger to its original state
+#'
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/revert}
+#' @family trigger structure functions
+#' 
+#' @description
+#'
+#' This reverts a trigger back to its original, unmodified state.
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' @param trigger_id Trigger Id
+#' 
+#' @export
 gtm_triggers_revert <- function(account_id, container_id, workspace_id, trigger_id) {
     
   if(any(missing(account_id),

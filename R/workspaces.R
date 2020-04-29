@@ -1,9 +1,17 @@
-#' Manage Workspaces in GTM
+#' List all workspaces a user has accesss to 
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/list}
+#' @family workspace functions
+#' 
+#' @description
 #'
-#' @seealso https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces
-#' @family workspaces functions
+#' This will return a data frame all your available workspaces in a given container.
+#' If you want to get the information for a single workspace, use \code{gtm_workspaces_get}
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' 
 #' @export
-
 gtm_workspaces_list <- function(account_id, container_id) {
   
   if (any(missing(account_id),
@@ -21,6 +29,21 @@ gtm_workspaces_list <- function(account_id, container_id) {
   return(res)
 }
 
+#' Get workspace metadata
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/get}
+#' @family workspace functions
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#'
+#' @description
+#'
+#' This returns a list containing the metadata about a single Workspace
+#' If you want to get the information for all workspaces, use \code{gtm_workspaces_list}
+#' 
+#' @export
 gtm_workspaces_get <- function(account_id, container_id, workspace_id) {
   
   if (any(missing(account_id),
@@ -40,6 +63,21 @@ gtm_workspaces_get <- function(account_id, container_id, workspace_id) {
   return(res)
 }
 
+#' Create a new workspace
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/create}
+#' @family workspace functions
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param name Workspace Name
+#' @param description Workspace Description
+#'
+#' @description
+#'
+#' This creates a new workspace in an esisting container.
+#' 
+#' @export
 gtm_workspaces_create <- function(account_id, container_id, name, description = NULL) {
   
   if (any(missing(account_id),
@@ -65,6 +103,22 @@ gtm_workspaces_create <- function(account_id, container_id, name, description = 
   return(res)
 }
 
+#' Update a workspace
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/update}
+#' @family workspace functions
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' @param name Workspace Name
+#' @param description Workspace Description
+#'
+#' @description
+#'
+#' This updates the name or description of an existing workspace.
+#' 
+#' @export
 gtm_workspaces_update <- function(account_id, container_id, workspace_id, name, description = NULL) {
   
   if (any(missing(account_id),
@@ -97,6 +151,21 @@ gtm_workspaces_update <- function(account_id, container_id, workspace_id, name, 
   return(res)
 }
 
+#' Delete a workspace
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/delete}
+#' @family workspace functions
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' @param force Force deletion without user input
+#'
+#' @description
+#'
+#' This irrevocably deletes a workspace and any work in it.
+#' 
+#' @export
 gtm_workspaces_delete <- function(account_id, container_id, workspace_id, force = c("TRUE","FALSE")) {
     
     if (any(missing(account_id),
@@ -138,6 +207,21 @@ gtm_workspaces_delete <- function(account_id, container_id, workspace_id, force 
   }
 
 
+#' See workspace changes
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/getStatus}
+#' @family workspace functions
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#'
+#' @description
+#'
+#' Finds conflicting and modified entities in the workspace.
+#' 
+#' 
+#' @export
 gtm_workspaces_status <- function(account_id,container_id,workspace_id) {
   
   if(any(missing(account_id),
@@ -157,8 +241,25 @@ gtm_workspaces_status <- function(account_id,container_id,workspace_id) {
   return(status)
 }
 
-
-gtm_workspaces_submit <- function(account_id, container_id, workspace_id, name = NULL, notes = NULL) {
+#' Create a new container version
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/create_version}
+#' @family workspace functions
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' @param name Version Name
+#' @param notes Version Notes
+#'
+#' @description
+#'
+#' This creates a new version of the GTM container, but does not publish it
+#' as a live version. The name and notes will be permanently visible for the container version.
+#' 
+#' 
+#' @export
+gtm_workspaces_submit <- function(account_id, container_id, workspace_id, name, notes = NULL) {
   
   if (any(missing(account_id),
           missing(container_id),
@@ -166,6 +267,8 @@ gtm_workspaces_submit <- function(account_id, container_id, workspace_id, name =
     )) {
     stop("Account Id, Container Id and Workspace Id are all required for this function.")
   }
+  
+  if(missing(name)) stop("New versions need a name, please provide one.")
   
 
   path_args <- list(
@@ -192,25 +295,22 @@ gtm_workspaces_submit <- function(account_id, container_id, workspace_id, name =
   return(res$containerVersion)
 }
 
-gtm_workspaces_publish <- function(account_id, container_id, version_id) {
-  
-  if (any(missing(account_id),
-         missing(container_id),
-         missing(version_id)
-  )) {
-    stop("Account Id, Container Id and Version Id are all required for this function.")
-  }
-  
-  path_args <- list(
-    accounts = account_id,
-    containers = container_id,
-    versions = version_id
-  )
-  res <- gtm_action(path_args = path_args, action = "publish")
-  myMessage(sprintf("Version %s has been published as Live in %s",res$containerVersion$containerVersionId, res$containerVersion$container$name),level=3)
-  return(res)
-}
-
+#' Preview the compilation of a container version
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/quick_preview}
+#' @family workspace functions
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#'
+#' @description
+#' Quick previews a workspace by creating a fake container version from all entities in the 
+#' provided workspace. It returns a container object, and if there are any conflicts, sync errors
+#' or compiler errors in the workspace
+#' 
+#' 
+#' @export
 gtm_workspaces_preview<-function(account_id,container_id,workspace_id){
   
   if (any(missing(account_id),
@@ -244,6 +344,20 @@ gtm_workspaces_preview<-function(account_id,container_id,workspace_id){
   
 }
 
+#' Bring a workspace in line with the latest version
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/sync}
+#' @family workspace functions
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#'
+#' @description
+#' Syncs a workspace to the latest container version by updating all unmodified 
+#' workspace entities and displaying conflicts for modified entities
+#' 
+#' @export
 gtm_workspaces_sync <- function(account_id,container_id,workspace_id) {
   if (any(missing(account_id),
          missing(container_id),
@@ -265,6 +379,25 @@ gtm_workspaces_sync <- function(account_id,container_id,workspace_id) {
   return(res)
 }
 
+#' Resolve workspace conflicts
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/resolve_conflict}
+#' @family workspace functions
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' @param tag A Tag Object
+#' @param trigger A Trigger Object
+#' @param variable A Variable Object
+#' @param folder A Folder Object
+#' @param changeStatus Represents how the entity has been changed in the workspace.
+#'
+#' @description
+#' Resolves a merge conflict for a workspace entity by updating it to the resolved 
+#' entity passed in the request.
+#' 
+#' @export
 gtm_workspaces_resolve <- function(account_id,
                                    container_id,
                                    workspace_id, 

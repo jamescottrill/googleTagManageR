@@ -1,8 +1,18 @@
-#' Manage Variables in GTM
-#' @seealso https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables
-#' @family account structure functions
+#' List all variables in a workspace
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/list}
+#' @family variable structure functions
+#' 
+#' @description
+#'
+#' This will return a data frame all your available variables in a given workspace
+#' If you want to get the information for a single variable, use \code{gtm_variables_get}
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' 
 #' @export
-
 gtm_variables_list <- function(account_id,container_id,workspace_id) {
   
   if (any(missing(account_id),
@@ -22,6 +32,22 @@ gtm_variables_list <- function(account_id,container_id,workspace_id) {
   return(res)
 }
 
+#' List all variables in a workspace
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/get}
+#' @family variable structure functions
+#' 
+#' @description
+#'
+#' This will return a list with the settings of a single variable.
+#' If you want to get the information for all variables, use \code{gtm_variables_list}
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' @param variable_id Variable Id
+#' 
+#' @export
 gtm_variables_get <- function(account_id,container_id,workspace_id,variable_id) {
   
   if (any(missing(account_id),
@@ -42,6 +68,22 @@ gtm_variables_get <- function(account_id,container_id,workspace_id,variable_id) 
   return(variables)
 }
 
+
+#' Create a new variable
+#'
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/create}
+#' @family variable structure functions
+#' 
+#' @description
+#'
+#' This takes a variable resource and creates a new variable in GTM.
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' @param variable_object Variable Object
+#' 
+#' @export
 gtm_variables_create <- function(account_id, container_id, workspace_id, variable_object) {
   
   if (any(missing(account_id),
@@ -64,6 +106,22 @@ gtm_variables_create <- function(account_id, container_id, workspace_id, variabl
   return(res)
 }
 
+#' Update an existing variable
+#'
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/update}
+#' @family variable structure functions
+#' 
+#' @description
+#'
+#' This takes a variable resource and overwrites the existing variable in GTM
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' @param variable_id Variable Id
+#' @param variable_object Variable Object
+#' 
+#' @export
 gtm_variables_update <- function(account_id,container_id,workspace_id,variable_id,variable_object) {
   
   if (any(missing(account_id),
@@ -86,7 +144,23 @@ gtm_variables_update <- function(account_id,container_id,workspace_id,variable_i
   return(res)
 }
 
-
+#' Delete a variable
+#'
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/delete}
+#' @family variable structure functions
+#' @importFrom utils menu
+#' 
+#' @description
+#'
+#' This deletes a variable in a GTM workspace
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' @param variable_id Variable Id
+#' @param force Force deletion without user input
+#' 
+#' @export
 gtm_variables_delete <- function(account_id, container_id, workspace_id, variable_id, force = c(TRUE,FALSE)) {
   
   if(any(missing(account_id),
@@ -128,7 +202,21 @@ gtm_variables_delete <- function(account_id, container_id, workspace_id, variabl
     }
   }
 
-
+#' Reverts a variable to its original state
+#'
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/revert}
+#' @family variable structure functions
+#' 
+#' @description
+#'
+#' This reverts a variable back to its original, unmodified state.
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' @param variable_id Variable Id
+#' 
+#' @export
 gtm_variables_revert <- function(account_id, container_id, workspace_id, variable_id) {
   
   if (any(missing(account_id),

@@ -1,9 +1,18 @@
-#' Manage version headers
-#' @seealso https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/version_headers
-#' @family container version functions
+#' List all container versions of a GTM container
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/version_headers/list}
+#' @family version header functions
+#' 
+#' @description
+#'
+#' This will return a data frame all container versions.
+#' If you want to get the information for the most recent version, use \code{gtm_headers_latest}
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param includeDeleted Include deleted version - Default False
+#' 
 #' @export
-#
-
 gtm_headers_list <- function(account_id, container_id, includeDeleted=c("TRUE","FALSE")) {
   
   if (any(missing(account_id),
@@ -30,6 +39,20 @@ gtm_headers_list <- function(account_id, container_id, includeDeleted=c("TRUE","
   return(res)
 }
 
+#'Gets the latest container version header
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/version_headers/latest}
+#' @family version header functions
+#' 
+#' @description
+#'
+#' This will return the latest container version header
+#' If you want to get the information for the most all container versions, use \code{gtm_headers_list}
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' 
+#' @export
 gtm_headers_latest <- function(account_id, container_id) {
   
   if (any(missing(account_id),

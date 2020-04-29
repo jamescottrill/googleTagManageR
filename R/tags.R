@@ -1,9 +1,18 @@
-#' Manage Tags in GTM
+#' List all tags in a workspace
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/list}
+#' @family tag structure functions
+#' 
+#' @description
 #'
-#' @seealso https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags
-#' @family tag functions
+#' This will return a data frame all your available tags in a given workspace
+#' If you want to get the information for a single tag, use \code{gtm_tagss_get}
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' 
 #' @export
-
 gtm_tags_list <- function(account_id, container_id, workspace_id) {
   if (any(missing(account_id),
           missing(container_id),
@@ -21,6 +30,22 @@ gtm_tags_list <- function(account_id, container_id, workspace_id) {
   return(res)
 }
 
+#' List all tags in a workspace
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/get}
+#' @family tag structure functions
+#' 
+#' @description
+#'
+#' This will return a list with the settings of a single tag.
+#' If you want to get the information for all tags, use \code{gtm_tags_list}
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' @param tag_id Tag Id
+#' 
+#' @export
 gtm_tags_get <- function(account_id,container_id,workspace_id,tag_id) {
   
   if (any(missing(account_id),
@@ -42,6 +67,21 @@ gtm_tags_get <- function(account_id,container_id,workspace_id,tag_id) {
   return(res)
 }
 
+#' Create a new tag
+#'
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/create}
+#' @family tag structure functions
+#' 
+#' @description
+#'
+#' This takes a tag resource and creates a new tag in GTM.
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' @param tag_object Tag Object
+#' 
+#' @export
 gtm_tags_create <- function(account_id,container_id,workspace_id,tag_object) {
   
   if (any(missing(account_id),
@@ -67,6 +107,22 @@ gtm_tags_create <- function(account_id,container_id,workspace_id,tag_object) {
 }
 
 
+#' Update an existing tag
+#'
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/update}
+#' @family tag structure functions
+#' 
+#' @description
+#'
+#' This takes a tag resource and overwrites the existing tag in GTM
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' @param tag_id Tag Id
+#' @param tag_object Tag Object
+#' 
+#' @export
 gtm_tags_update <- function(account_id, container_id, workspace_id, tag_id, tag_object) {
   
   if (any(missing(account_id),
@@ -91,6 +147,23 @@ gtm_tags_update <- function(account_id, container_id, workspace_id, tag_id, tag_
     return(res)
   }
 
+#' Delete a tag
+#'
+#' @seealso \url{\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/delete}}
+#' @family tag structure functions
+#' @importFrom utils menu
+#' 
+#' @description
+#'
+#' This deletes a tag in a GTM workspace
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' @param tag_id Tag Id
+#' @param force Force deletion without user input
+#' 
+#' @export
 gtm_tags_delete <-function(account_id, container_id, workspace_id, tag_id, force = c("TRUE","FALSE")) {
 
     if(any(missing(account_id),
@@ -133,6 +206,21 @@ gtm_tags_delete <-function(account_id, container_id, workspace_id, tag_id, force
     return()
   }
 
+#' Reverts a tag,
+#'
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/revert}
+#' @family tag structure functions
+#' 
+#' @description
+#'
+#' This reverts a tag back to its original, unmodified state.
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#' @param tag_id Tag Id
+#' 
+#' @export
 gtm_tags_revert <- function(account_id, container_id, workspace_id, tag_id) {
   
   if (any(missing(account_id),

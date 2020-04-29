@@ -57,3 +57,30 @@ myMessage <- function(..., level = 2){
   }
   
 }
+
+#' Converts a list (of Ids) into a list of key value pairs
+#' @param key The Key
+#' @param value The Values
+#' @param list An existing list to add key values to.
+#' @noRd
+convert <- function(key, values, list = NULL){
+  if (is.null(list) ) list <- list()
+  temp <- list()
+  for(i in 1:length(values)){
+    temp[i]=values[[i]]
+  }
+  names(temp)<-rep(key,length(values))
+  list <- c(list,temp)
+  return(list)
+}
+
+#' Error Message for Functions
+#' @param err A Simple Error 
+#' @noRd
+handle_error <- function(err){
+  if(grepl('Not found or permission denied', err$message)) {
+    myMessage("The API request was rejected, check that you have the necessary permissions and that the request is valid.", level = 3)
+  } else {
+    stop(err$message, call. = FALSE)
+  }
+}

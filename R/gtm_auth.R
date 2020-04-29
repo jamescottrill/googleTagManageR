@@ -2,8 +2,14 @@
 #'
 #' @importFrom googleAuthR gar_auth
 #' @family login functions
+#' 
+#' @param token An existing Google Auth Token
+#' 
+#' @description 
+#' This function authenticates the user with Google Tag Manager
+#' 
+#' 
 #' @export
-
 gtm_auth<-function(token = NULL){
   
   if(!is.null(token)){

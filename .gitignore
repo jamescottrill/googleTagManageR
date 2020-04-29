@@ -8,3 +8,4 @@ R/gtm_auth-private.R
 R/development.R
 .DS_Store
 *.rds
+NAMESPACE_BK

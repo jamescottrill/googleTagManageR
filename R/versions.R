@@ -1,9 +1,17 @@
-#' Manage Versions in GTM
+#' List a single version in a workspace
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/get}
+#' @family version structure functions
+#' 
+#' @description
 #'
-#' @seealso https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions
-#' @family container version functions
+#' This returns a single 
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param version_id Version Id
+#' 
 #' @export
-
 gtm_versions_get <- function(account_id,container_id,version_id) {
   
   if(any(missing(account_id),
@@ -27,6 +35,21 @@ gtm_versions_get <- function(account_id,container_id,version_id) {
   return(res)
 }
 
+#' Update a container version
+#'
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/update}
+#' @family version structure functions
+#' 
+#' @description
+#'
+#' Updates a container Version
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param version_id Version Id
+#' @param name Version Name
+#' @param description Version Description
+#' @export
 gtm_versions_update <- function(account_id,container_id,version_id, name = NULL, description = NULL) {
   
   if(any(missing(account_id),
@@ -63,7 +86,21 @@ gtm_versions_update <- function(account_id,container_id,version_id, name = NULL,
   
   return(res)
 }
-
+#' Delete a container version
+#'
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/delete}
+#' @family version structure functions
+#' 
+#' @description
+#'
+#' Deletes a container version
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param version_id Version Id
+#' @param force Force deletion without user input
+#' 
+#' @export
 gtm_versions_delete <- function(account_id, container_id, version_id, force = c("TRUE","FALSE")) {
     if(any(missing(account_id),
            missing(container_id),
@@ -102,6 +139,21 @@ gtm_versions_delete <- function(account_id, container_id, version_id, force = c(
     }
   }
 
+
+#' Sets a container version as the latest version
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/set_latest}
+#' @family versions structure functions
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param version_id Version Id
+#'
+#' @description
+#' Sets the given container version as the latest version
+#' 
+#' 
+#'  @export
 gtm_versions_setlatest <- function(account_id,container_id,version_id) {
   
   if(any(missing(account_id),
@@ -121,6 +173,20 @@ gtm_versions_setlatest <- function(account_id,container_id,version_id) {
   return(res)
 }
 
+#' Undeletes a container version
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/undelete}
+#' @family versions structure functions
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param version_id Version Id
+#'
+#' @description
+#' Undeletes a container version
+#' 
+#' 
+#'  @export
 gtm_versions_undelete <- function(account_id, container_id, version_id) {
 
   if(any(missing(account_id),
@@ -138,5 +204,38 @@ gtm_versions_undelete <- function(account_id, container_id, version_id) {
   
   res <- gtm_action(path_args = path_args, action = "undelete")
   myMessage(sprintf("Version %s has been undeleted",res$containerVersion$containerVersionId),level=3)
+  return(res)
+}
+
+#' Publish a new container version
+#' 
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/publish}
+#' @family versions structure functions
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param version_id Version Id
+#'
+#' @description
+#' Publishes a container version to be live
+#' 
+#' 
+#'  @export
+gtm_versions_publish <- function(account_id, container_id, version_id) {
+  
+  if (any(missing(account_id),
+          missing(container_id),
+          missing(version_id)
+  )) {
+    stop("Account Id, Container Id and Version Id are all required for this function.")
+  }
+  
+  path_args <- list(
+    accounts = account_id,
+    containers = container_id,
+    versions = version_id
+  )
+  res <- gtm_action(path_args = path_args, action = "publish")
+  myMessage(sprintf("Version %s has been published as Live in %s",res$containerVersion$containerVersionId, res$containerVersion$container$name),level=3)
   return(res)
 }
