@@ -15,9 +15,6 @@ gtm_versions_undelete(account_id, container_id, version_id)
 }
 \description{
 Undeletes a container version
-
-
- @export
 }
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/undelete}

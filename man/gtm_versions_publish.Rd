@@ -15,9 +15,6 @@ gtm_versions_publish(account_id, container_id, version_id)
 }
 \description{
 Publishes a container version to be live
-
-
- @export
 }
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/publish}

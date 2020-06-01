@@ -15,9 +15,6 @@ gtm_versions_setlatest(account_id, container_id, version_id)
 }
 \description{
 Sets the given container version as the latest version
-
-
- @export
 }
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/set_latest}

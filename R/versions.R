@@ -153,7 +153,7 @@ gtm_versions_delete <- function(account_id, container_id, version_id, force = c(
 #' Sets the given container version as the latest version
 #' 
 #' 
-#'  @export
+#' @export
 gtm_versions_setlatest <- function(account_id,container_id,version_id) {
   
   if(any(missing(account_id),
@@ -186,7 +186,7 @@ gtm_versions_setlatest <- function(account_id,container_id,version_id) {
 #' Undeletes a container version
 #' 
 #' 
-#'  @export
+#' @export
 gtm_versions_undelete <- function(account_id, container_id, version_id) {
 
   if(any(missing(account_id),
@@ -220,7 +220,7 @@ gtm_versions_undelete <- function(account_id, container_id, version_id) {
 #' Publishes a container version to be live
 #' 
 #' 
-#'  @export
+#' @export
 gtm_versions_publish <- function(account_id, container_id, version_id) {
   
   if (any(missing(account_id),

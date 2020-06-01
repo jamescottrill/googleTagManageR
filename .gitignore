@@ -4,6 +4,8 @@
 .Ruserdata
 .httr-oauth
 .Rbuildignore
+.Renviron
+*.json
 R/gtm_auth-private.R
 R/development.R
 .DS_Store
