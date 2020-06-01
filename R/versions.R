@@ -169,7 +169,7 @@ gtm_versions_setlatest <- function(account_id,container_id,version_id) {
     versions = version_id
   )
   res <- gtm_action(path_args = path_args, action = "set_latest")
-  myMessage(sprintf("Version %s has been set to the latest version", res$containerVersion$containerVersionId), level=3)
+  myMessage(sprintf("Version %s has been set to the latest version", res$containerVersionId), level=3)
   return(res)
 }
 
