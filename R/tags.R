@@ -149,7 +149,7 @@ gtm_tags_update <- function(account_id, container_id, workspace_id, tag_id, tag_
 
 #' Delete a tag
 #'
-#' @seealso \url{\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/delete}}
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/delete}
 #' @family tag structure functions
 #' @importFrom utils menu
 #' 
