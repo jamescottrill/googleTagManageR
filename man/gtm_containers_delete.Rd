@@ -19,7 +19,7 @@ This deletes a GTM container from an account. This is an irreversible process, s
  @export
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/deelete}
+\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/delete}
 
 Other container functions: 
 \code{\link{gtm_containers_create}()},

@@ -152,7 +152,7 @@ gtm_containers_update <-function(account_id,
 
 #' Deletes an existing GTM Container.
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/deelete}
+#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/delete}
 #' @family container functions
 #' @importFrom utils menu
 #' 
