@@ -4,12 +4,30 @@
 \alias{gtm_auth}
 \title{Auth for GTM Specific Properties}
 \usage{
-gtm_auth(token = NULL)
+gtm_auth(email = NULL, token = NULL)
 }
 \arguments{
+\item{email}{The email address for the Google Account}
+
 \item{token}{An existing Google Auth Token}
+}
+\value{
+Invisibly, the token that has been saved to the session
 }
 \description{
 This function authenticates the user with Google Tag Manager
+To use your own GTM API credentials, either ensure that you have set the
+path to your OAuth2 API Credentials file in your 
+'GAR_CLIENT_JSON' variable in your .Renviron file and then restart your 
+R session or set
+}
+\examples{
+ 
+ \dontrun{
+ gtm_auth()
+ 
+ gtm_auth(email="me@mycompany.co.uk")
+ }
+ 
 }
 \concept{login functions}

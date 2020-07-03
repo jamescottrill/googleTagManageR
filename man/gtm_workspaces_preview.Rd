@@ -24,6 +24,7 @@ or compiler errors in the workspace
 Other workspace functions: 
 \code{\link{gtm_workspaces_create}()},
 \code{\link{gtm_workspaces_delete}()},
+\code{\link{gtm_workspaces_export}()},
 \code{\link{gtm_workspaces_get}()},
 \code{\link{gtm_workspaces_list}()},
 \code{\link{gtm_workspaces_resolve}()},

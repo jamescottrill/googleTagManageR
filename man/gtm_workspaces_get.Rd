@@ -23,6 +23,7 @@ If you want to get the information for all workspaces, use \code{gtm_workspaces_
 Other workspace functions: 
 \code{\link{gtm_workspaces_create}()},
 \code{\link{gtm_workspaces_delete}()},
+\code{\link{gtm_workspaces_export}()},
 \code{\link{gtm_workspaces_list}()},
 \code{\link{gtm_workspaces_preview}()},
 \code{\link{gtm_workspaces_resolve}()},
