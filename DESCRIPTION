@@ -8,7 +8,7 @@ Authors@R: c(person("James", "Cottrill",email="james@jamescottrill.co.uk", role=
             )
 Description: Allows programmatic updating of GTM via the API.
 Depends:
-    R (>= 3.6.1)
+    R (>= 3.5.0)
 Imports:
     assertthat,
     future (>= 1.2.0),
