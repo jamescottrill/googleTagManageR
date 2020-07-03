@@ -446,3 +446,43 @@ gtm_workspaces_resolve <- function(account_id,
   return(res)
 }
 
+#' Export a Workspace
+#' 
+#' @family workspace functions
+#' 
+#' @param account_id Account Id
+#' @param container_id Container Id
+#' @param workspace_id Workspace Id
+#'
+#' @description
+#' Get the entire contents of a workspace
+#' 
+#' @export
+
+gtm_workspaces_export <- function(account_id,
+                                   container_id,
+                                   workspace_id){
+  
+  if (any(missing(account_id),
+          missing(container_id),
+          missing(workspace_id)
+  )) {
+    stop("Account Id, Container Id and Workspace Id are all required for this function.")
+  }
+  
+  
+  
+  path_args <- list(
+    accounts = account_id,
+    containers = container_id,
+    workspaces = workspace_id,
+    export = ""
+  )
+  
+  
+  res <- gtm_get(path_args = path_args)
+  
+  return(res)
+  
+  
+}
