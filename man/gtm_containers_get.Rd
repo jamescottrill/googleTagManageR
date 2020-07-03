@@ -18,7 +18,7 @@ If you want to get the information for all containers, use \code{gtm_containers_
  @export
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/containers}
+\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/get}
 
 Other container functions: 
 \code{\link{gtm_containers_create}()},

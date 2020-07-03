@@ -14,7 +14,7 @@ This returns a dataframe containing all the containers in an account
 If you want to get the information for a single container, use \code{gtm_containers_get}
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/containers}
+\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/list}
 
 Other container functions: 
 \code{\link{gtm_containers_create}()},

@@ -29,7 +29,7 @@ This creates a new container in the specified account.
  @export
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/containers}
+\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/create}
 
 Other container functions: 
 \code{\link{gtm_containers_delete}()},

@@ -33,7 +33,7 @@ Although you can't change the type of container, it is still required for this f
  @export
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/containers}
+\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/update}
 
 Other container functions: 
 \code{\link{gtm_containers_create}()},

@@ -27,7 +27,7 @@ gtm_tags_delete(
 This deletes a tag in a GTM workspace
 }
 \seealso{
-\url{\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/delete}}
+\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/delete}
 
 Other tag structure functions: 
 \code{\link{gtm_tags_create}()},
