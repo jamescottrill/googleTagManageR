@@ -17,8 +17,16 @@
 #' @examples 
 #'  
 #'  \dontrun{
+#'  # To use the included (shared) credentials
+#'  library(googleTagManageR)
 #'  gtm_auth()
 #'  
+#'  # To useyour own GCP credentials
+#'  Sys.setenv("GAR_CLIENT_JSON" = "location/of/file.json")
+#'  library(googleTagManageR)
+#'  gtm_auth()
+#'  
+#'  # Reauthentication - if you've already logged in
 #'  gtm_auth(email="me@mycompany.co.uk")
 #'  }
 #'  

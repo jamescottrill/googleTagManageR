@@ -20,14 +20,46 @@ gtm_tags_update(account_id, container_id, workspace_id, tag_id, tag_object)
 \description{
 This takes a tag resource and overwrites the existing tag in GTM
 }
+\examples{
+\dontrun{
+
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 5
+tagId <- 11
+
+tag <- list(
+  name = "Example DataLayer Push",
+  type = "html",
+  tagFiringOption = "oncePerEvent",
+  parameter = list(
+    list(
+      type = "template",
+      key = "html",
+      value = "<script>\n   window.dataLayer=window.dataLayer||[];\n   window.dataLayer.push({\"event\": \"demoEvent\"});\n</script>"
+    ),
+    list(
+      type = "boolean",
+      key = "supportDocumentWrite",
+      value = "false"
+    )
+  ),
+  firingTriggerId = 20,
+  tagFiringOption = "oncePerPage"
+)
+
+updatedTag <- gtm_tags_update(accountId, containerId, workspaceId, tagId, tag)
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/update}
 
-Other tag structure functions: 
+Other tag functions: 
 \code{\link{gtm_tags_create}()},
 \code{\link{gtm_tags_delete}()},
 \code{\link{gtm_tags_get}()},
 \code{\link{gtm_tags_list}()},
 \code{\link{gtm_tags_revert}()}
 }
-\concept{tag structure functions}
+\concept{tag functions}

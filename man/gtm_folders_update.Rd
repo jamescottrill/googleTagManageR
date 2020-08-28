@@ -29,6 +29,20 @@ gtm_folders_update(
 \description{
 This updates a folder in the specified workspaces
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 3
+folderName <- "New Analytics Tags"
+folderNotes <- "All our website's Google Analytics App+Web Tags"
+
+folder <- gtm_folders_update(accountId, containerId, workspaceId, folderName, folderNotes)
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/update}
 

@@ -13,6 +13,15 @@ gtm_accounts_get(account_id)
 This returns a list containing the metadata about a single account.
 If you want to get the information for all accounts, use \code{gtm_accounts_list}
 }
+\examples{
+\dontrun{
+
+account_id <- 12345678
+account <- gtm_accounts_get(account_id)
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/get}
 

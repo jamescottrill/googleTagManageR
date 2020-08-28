@@ -13,10 +13,25 @@ gtm_workspaces_preview(account_id, container_id, workspace_id)
 
 \item{workspace_id}{Workspace Id}
 }
+\value{
+Invisibly, the server response. If successful this is list with one element.
+}
 \description{
 Quick previews a workspace by creating a fake container version from all entities in the 
 provided workspace. It returns a container object, and if there are any conflicts, sync errors
 or compiler errors in the workspace
+}
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 6
+
+preview <- gtm_workspaces_preview(accountId, containerId, workspaceId)
+
+}
+
 }
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/quick_preview}
@@ -24,7 +39,6 @@ or compiler errors in the workspace
 Other workspace functions: 
 \code{\link{gtm_workspaces_create}()},
 \code{\link{gtm_workspaces_delete}()},
-\code{\link{gtm_workspaces_export}()},
 \code{\link{gtm_workspaces_get}()},
 \code{\link{gtm_workspaces_list}()},
 \code{\link{gtm_workspaces_resolve}()},

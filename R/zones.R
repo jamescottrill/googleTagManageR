@@ -1,7 +1,7 @@
 #' List all zones in a workspace
 #' 
 #' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/list}
-#' @family zone structure functions
+#' @family zone functions
 #' 
 #' @description
 #'
@@ -12,6 +12,17 @@
 #' @param container_id Container Id
 #' @param workspace_id Workspace Id
 #' 
+#' @examples 
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 11
+#' 
+#' zones <- gtm_zones_list(accountId, containerId, workspaceId)
+#' }
+#' 
+#' @export
 gtm_zones_list <- function(account_id, container_id, workspace_id) {
   
   if(any(missing(account_id),
@@ -33,7 +44,7 @@ gtm_zones_list <- function(account_id, container_id, workspace_id) {
 #' List a single zone in a workspace
 #' 
 #' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/get}
-#' @family zone structure functions
+#' @family zone functions
 #' 
 #' @description
 #'
@@ -44,6 +55,18 @@ gtm_zones_list <- function(account_id, container_id, workspace_id) {
 #' @param container_id Container Id
 #' @param workspace_id Workspace Id
 #' @param zone_id Zone Id
+#' 
+#' 
+#' @examples 
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 11
+#' zoneId <- 12
+#' 
+#' zone <- gtm_zones_get(accountId, containerId, workspaceId, zoneId)
+#' }
 #' 
 #' @export
 gtm_zones_get <- function(account_id,container_id,workspace_id,zone_id) {
@@ -71,7 +94,7 @@ gtm_zones_get <- function(account_id,container_id,workspace_id,zone_id) {
 #' Create a new zone
 #'
 #' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/create}
-#' @family zone structure functions
+#' @family zone functions
 #' 
 #' @description
 #'
@@ -108,7 +131,7 @@ gtm_zones_create <- function(account_id,container_id,workspace_id,zone_object) {
 #' Update an existing zone
 #'
 #' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/update}
-#' @family zone structure functions
+#' @family zone functions
 #' 
 #' @description
 #'
@@ -145,7 +168,7 @@ gtm_zones_update <- function(account_id,container_id, workspace_id,zone_id,zone_
 #' Delete a zone
 #'
 #' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/delete}
-#' @family zone structure functions
+#' @family zone functions
 #' @importFrom utils menu
 #' 
 #' @description
@@ -157,6 +180,19 @@ gtm_zones_update <- function(account_id,container_id, workspace_id,zone_id,zone_
 #' @param workspace_id Workspace Id
 #' @param zone_id Zone Id
 #' @param force Force deletion without user input
+#' 
+#' 
+#' @examples 
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 11
+#' zoneId <- 3
+#' 
+#' gtm_zones_delete(accountId, containerId, workspaceId, zoneId, "TRUE")
+#' 
+#' }
 #' 
 #' @export
 gtm_zones_delete <- function(account_id, container_id, workspace_id, zone_id, force = c("TRUE","FALSE")) {
@@ -204,7 +240,7 @@ gtm_zones_delete <- function(account_id, container_id, workspace_id, zone_id, fo
 #' Reverts a zone to its original state
 #'
 #' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/revert}
-#' @family zone structure functions
+#' @family zone functions
 #' 
 #' @description
 #'
@@ -214,6 +250,17 @@ gtm_zones_delete <- function(account_id, container_id, workspace_id, zone_id, fo
 #' @param container_id Container Id
 #' @param workspace_id Workspace Id
 #' @param zone_id Zone Id
+#' 
+#' @examples 
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 11
+#' zoneId <- 5
+#' 
+#' zone <- gtm_zones_revert(accountId, containerId, workspaceId, zoneId)
+#' }
 #' 
 #' @export
 gtm_zones_revert <- function(account_id, container_id, workspace_id,zone_id) {

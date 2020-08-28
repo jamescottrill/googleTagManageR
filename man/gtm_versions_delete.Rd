@@ -23,11 +23,38 @@ gtm_versions_delete(
 \description{
 Deletes a container version
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+versionId <- 6
+
+gtm_versions_delete(accountId, containerId, versionId)
+
+# This will delete Version \%s. Are you sure you want to continue?
+
+#  1: Yes
+#  2: No
+
+# Selection: 1
+
+# Version 6 has been deleted.
+
+tagId = 7
+
+gtm_versions_delete(accountId, containerId, versionId, "TRUE")
+
+# Version 7 has been deleted.
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/delete}
 
-Other version structure functions: 
+Other version functions: 
 \code{\link{gtm_versions_get}()},
 \code{\link{gtm_versions_update}()}
 }
-\concept{version structure functions}
+\concept{version functions}

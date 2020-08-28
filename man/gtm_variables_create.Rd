@@ -18,14 +18,93 @@ gtm_variables_create(account_id, container_id, workspace_id, variable_object)
 \description{
 This takes a variable resource and creates a new variable in GTM.
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 3
+
+variable <- list(
+  name = 'Custom JS Variable',
+  type = 'jsm',
+  parameter = list(
+    list(
+      type = 'template',
+      key = 'javascript',
+      value = 'function(){\n  return document.querySelector(\"form\").id;\n}'
+    )
+  )
+)
+
+cjsVariable <- gtm_variables_create(accountId, containerId, workspaceId, variable)
+
+variable2 <- list(
+name = 'Lookup Table',
+type = 'smm',
+parameter = list(
+  list(
+        type = 'boolean',
+        key = 'setDefaultValue',
+        value = false
+    ),
+    list(
+        type = 'template',
+        key = 'input',
+        value = '{{Page Hostname}}'
+    ),
+    list(
+        type = 'list',
+        key = 'map',
+        list = list(
+            list(
+            type = 'map'
+            map = list(list(
+                type = 'template',
+                key = 'key',
+                value = 'google.co.uk',
+            ),
+            list(
+                type = 'template',
+                key = 'value',
+                value = 'UA-123456-1',
+            )
+       )
+    ),
+    list(
+            type = 'map'
+            map = list(list(
+                type = 'template',
+                key = 'key',
+                value = 'bing.com',
+            ),
+            list(
+                type = 'template',
+                key = 'value',
+                value = 'UA-123456-2',
+            )
+       )
+    )
+    )
+   )
+  )
+ )
+
+lookupTable <- gtm_variables_create(accountId, containerId, workspaceId, variable2)
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/create}
 
-Other variable structure functions: 
+\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables#resource-representations}
+
+Other variable functions: 
 \code{\link{gtm_variables_delete}()},
 \code{\link{gtm_variables_get}()},
 \code{\link{gtm_variables_list}()},
 \code{\link{gtm_variables_revert}()},
 \code{\link{gtm_variables_update}()}
 }
-\concept{variable structure functions}
+\concept{variable functions}

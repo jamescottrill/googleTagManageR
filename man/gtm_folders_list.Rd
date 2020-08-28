@@ -17,6 +17,18 @@ gtm_folders_list(account_id, container_id, workspace_id)
 This returns a dataframe containing all the folder in a workspace
 If you want to get the information for a single folder, use \code{gtm_folders_get}
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 3
+
+folders <- gtm_folders_list(accountId, containerId, workspaceId)
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/list}
 

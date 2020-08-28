@@ -32,6 +32,26 @@ gtm_folders_move(
 \description{
 This moves entities to a new folder.
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 3
+folderId <- 1
+tags = 12
+
+
+gtm_folders_move(accountId, containerId, workspaceId, folderId, tags = tags)
+
+triggers = c(1,2,3)
+tags = c(4,5,6)
+
+gtm_folders_move(accountId, containerId, workspaceId, folderId, tags = tags)
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/move_entities_to_folder}
 

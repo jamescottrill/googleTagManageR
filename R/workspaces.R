@@ -11,6 +11,16 @@
 #' @param account_id Account Id
 #' @param container_id Container Id
 #' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' 
+#' workspaces <- gtm_workspaces_list(accountId, containerId)
+#' 
+#' }
+#' 
 #' @export
 gtm_workspaces_list <- function(account_id, container_id) {
   
@@ -42,6 +52,17 @@ gtm_workspaces_list <- function(account_id, container_id) {
 #'
 #' This returns a list containing the metadata about a single Workspace
 #' If you want to get the information for all workspaces, use \code{gtm_workspaces_list}
+#' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 5
+#' 
+#' workspace <- gtm_workspaces_get(accountId, containerId, workspaceId)
+#' 
+#' }
 #' 
 #' @export
 gtm_workspaces_get <- function(account_id, container_id, workspace_id) {
@@ -76,6 +97,18 @@ gtm_workspaces_get <- function(account_id, container_id, workspace_id) {
 #' @description
 #'
 #' This creates a new workspace in an esisting container.
+#' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' name <- 'New Analytics Tags'
+#' description <- 'Adding element visibility tags'
+#' 
+#' workspace <- gtm_workspaces_create(accountId, containerId, name, description)
+#' 
+#' }
 #' 
 #' @export
 gtm_workspaces_create <- function(account_id, container_id, name, description = NULL) {
@@ -117,6 +150,19 @@ gtm_workspaces_create <- function(account_id, container_id, name, description = 
 #' @description
 #'
 #' This updates the name or description of an existing workspace.
+#' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 6
+#' name <- 'New Analytics Tags'
+#' description <- 'Adding element visibility tags and scroll tracking'
+#' 
+#' workspace <- gtm_workspaces_update(accountId, containerId, workspaceId, name, description)
+#' 
+#' }
 #' 
 #' @export
 gtm_workspaces_update <- function(account_id, container_id, workspace_id, name, description = NULL) {
@@ -164,6 +210,32 @@ gtm_workspaces_update <- function(account_id, container_id, workspace_id, name, 
 #' @description
 #'
 #' This irrevocably deletes a workspace and any work in it.
+#' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 84
+#' 
+#' gtm_workspaces_delete(accountId, containerId, workspaceId)
+#' 
+#' # This will delete Workspace %s. Are you sure you want to continue?
+#' 
+#' #  1: Yes
+#' #  2: No
+#'
+#' # Selection: 1
+#' 
+#' # Workspace 84 has been deleted.
+#' 
+#' workspaceId = 85
+#' 
+#' gtm_workspaces_delete(accountId, containerId, workspaceId, "TRUE")
+#' 
+#' # Workspace 85 has been deleted.
+#' 
+#' }
 #' 
 #' @export
 gtm_workspaces_delete <- function(account_id, container_id, workspace_id, force = c("TRUE","FALSE")) {
@@ -220,6 +292,17 @@ gtm_workspaces_delete <- function(account_id, container_id, workspace_id, force 
 #'
 #' Finds conflicting and modified entities in the workspace.
 #' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 6
+#' 
+#' workspace <- gtm_workspaces_status(accountId, containerId, workspaceId)
+#' 
+#' }
+#' 
 #' 
 #' @export
 gtm_workspaces_status <- function(account_id,container_id,workspace_id) {
@@ -257,6 +340,19 @@ gtm_workspaces_status <- function(account_id,container_id,workspace_id) {
 #' This creates a new version of the GTM container, but does not publish it
 #' as a live version. The name and notes will be permanently visible for the container version.
 #' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 6
+#' name <- 'New Analytics Tags'
+#' notes <- 'Adding element visibility tags and scroll tracking'
+#' 
+#' workspace <- gtm_workspaces_update(accountId, containerId, workspaceId, name, notes)
+#' 
+#' }
+#' 
 #' 
 #' @export
 gtm_workspaces_submit <- function(account_id, container_id, workspace_id, name, notes = NULL) {
@@ -283,8 +379,8 @@ gtm_workspaces_submit <- function(account_id, container_id, workspace_id, name, 
   )
   res <- gtm_action(path_args = path_args, action = "create_version")
   
-  if (!is.null(res$syncStatus$mergeConflict)) {
-    myMessage(sprintf("There is a conflict in container %s, you will need to fix this before you can submit the workspace.",container_id), level = 3)
+  if (!is.null(res$syncStatus$syncError)) {
+    myMessage(sprintf("There is an error in container %s, you will need to fix this before you can submit the workspace.",container_id), level = 3)
     return(res$syncStatus)
   }
   else if (res$containerVersion$containerVersionId==0) {
@@ -309,7 +405,18 @@ gtm_workspaces_submit <- function(account_id, container_id, workspace_id, name, 
 #' provided workspace. It returns a container object, and if there are any conflicts, sync errors
 #' or compiler errors in the workspace
 #' 
+#' @examples
 #' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 6
+#' 
+#' preview <- gtm_workspaces_preview(accountId, containerId, workspaceId)
+#' 
+#' }
+#' 
+#' @return Invisibly, the server response. If successful this is list with one element.
 #' @export
 gtm_workspaces_preview<-function(account_id,container_id,workspace_id){
   
@@ -328,15 +435,15 @@ gtm_workspaces_preview<-function(account_id,container_id,workspace_id){
   
   res <- gtm_action(path_args = path_args, action = "quick_preview")
   
-  if (res$compilerError) {
+  if (!is.null(res$compilerError)) {
     myMessage("There was an error compiling the container, that's all we know.", level = 3)
     return (res)
     }
-  if (res$syncStatus$mergeConflict) {
+  if (!is.null(res$syncStatus$mergeConflict)) {
     myMessage("The sync was unsuccessful, please check your workspace and try again.", level = 3)
     return(res)
     }
-  if (res$syncStatus$mergeConflict) { 
+  if (!is.null(res$syncStatus$mergeConflict)) { 
     myMessage("There is a conflict in the workspace. This will need to be resolved before the workspace can be merged.", level = 3)
     return(res$mergeConflict)
     }
@@ -357,6 +464,18 @@ gtm_workspaces_preview<-function(account_id,container_id,workspace_id){
 #' Syncs a workspace to the latest container version by updating all unmodified 
 #' workspace entities and displaying conflicts for modified entities
 #' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 6
+#' 
+#' syncResult <- gtm_workspaces_sync(accountId, containerId, workspaceId)
+#' 
+#' }
+#' 
+#' 
 #' @export
 gtm_workspaces_sync <- function(account_id,container_id,workspace_id) {
   if (any(missing(account_id),
@@ -373,10 +492,11 @@ gtm_workspaces_sync <- function(account_id,container_id,workspace_id) {
   )
   
   res <- gtm_action(path_args = path_args, action = "sync")
-  if (res$syncStatus$mergeConflict) myMessage("The sync was unsuccessful, please check your workspace and try again.", level = 3)
-  if (res$syncStatus$mergeConflict) myMessage("There is a conflict in the workspace. This will need to be resolved before the workspace can be merged.", level = 3)
-  
-  return(res)
+  if (!is.null(res$syncStatus$syncError) && res$syncStatus$syncError) myMessage("There was a sync error in your workspace. This usually means you've created an object with a name that's already in use. 
+                                                                                The API doesn't expose this information, so either compare your base and new workspaces manually or try and sync on the
+                                                                                UI to see the result.", level = 3)
+  if (!is.null(res$syncStatus$mergeConflict) && res$syncStatus$mergeConflict) myMessage(sprintf("There was a merge conflict in your workspace, please check your workspace and try again. There are %s conflicts to resolve", length(res$mergeConflict$entityInBaseVersion)), level = 3)
+  invisible(res)
 }
 
 #' Resolve workspace conflicts
@@ -395,7 +515,62 @@ gtm_workspaces_sync <- function(account_id,container_id,workspace_id) {
 #'
 #' @description
 #' Resolves a merge conflict for a workspace entity by updating it to the resolved 
-#' entity passed in the request.
+#' entity passed in the request. This is one of the more complex functions, however if you
+#' are using this package for automation you will most probably want to keep the version from
+#' the current workspace not the base version, which is shown in hte example.
+#' @examples
+#' 
+#' \dontrun{
+#' 
+#'  # Comlpexities arise converting the list created in R into the correct JSON for GTM, specifically for the 
+#'  # Monitoring Metadata in Tags, so this is brought out, converted separately and then included in the tag 
+#'  # before it is resolved.
+#' 
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 10
+#' 
+#' mergeConflicts <- gtm_workspaces_sync(accountId, containerId, workspaceId)
+#' 
+#' for(i in 1:nrow(mergeConflicts$mergeConflict$entityInWorkspace)){
+#'     tag <- NULL
+#'     trigger <- NULL
+#'     variable <- NULL
+#'     folder <- NULL
+#'     obj <- mergeConflicts$mergeConflict$entityInWorkspace[i,]
+#'     if(!is.na(obj$tag$path)){
+#'        tag <- obj$tag
+#'        if(is.null(tag$monitoringMetadata$map)){
+#'        tag <- tag %>% select(-monitoringMetadata)
+#'        tag <- as.list(tag) %>% lapply(function(x){if(is.null(x[[1]])){x<-NA}else{x<-x}}) %>% lapply(function(x) x[!is.na(x)])
+#'        } else{
+#'        metadataMap <- tag$monitoringMetadata$map[[1]]
+#'        metadata <- list(
+#'            type = 'map',
+#'            map = metadataMap
+#'        )
+#'        tag <- as.list(tag) %>% lapply(function(x){if(is.null(x[[1]])){x<-NA}else{x<-x}}) %>% lapply(function(x) x[!is.na(x)])
+#'        tag$monitoringMetadata <- metadata
+#'        }
+#'        
+#'     }
+#'     if(!is.na(obj$trigger$path)){
+#'        trigger <- obj$trigger
+#'        trigger<-as.list(trigger) %>% lapply(function(x){if(is.null(x[[1]])){x<-NA}else{x<-x}}) %>% lapply(function(x) x[!is.na(x)])
+#'     }
+#'     if(!is.na(obj$variable$path)){
+#'        variable <- obj$variable
+#'        variable<-as.list(variable) %>% lapply(function(x){if(is.null(x[[1]])){x<-NA}else{x<-x}}) %>% lapply(function(x) x[!is.na(x)])
+#'     }
+#'     if(!is.na(obj$folder$path)){
+#'        folder <- obj$folder
+#'        folder<-as.list(folder) %>% lapply(function(x){if(is.null(x[[1]])){x<-NA}else{x<-x}}) %>% lapply(function(x) x[!is.na(x)])
+#'     }
+#'     changeStatus <- obj$changeStatus
+#'     
+#'     resolve <- gtm_workspaces_resolve(accountId, containerId, workspaceId, tag, trigger, variable, folder, changeStatus)
+#'   }
+#' }
 #' 
 #' @export
 gtm_workspaces_resolve <- function(account_id,
@@ -441,48 +616,7 @@ gtm_workspaces_resolve <- function(account_id,
     folder = folder
   )
   
-  res <- gtm_action(path_args = path_args, action = "resolve", body = body)
+  res <- gtm_action(path_args = path_args, action = "resolve_conflict", body = body)
   
-  return(res)
-}
-
-#' Export a Workspace
-#' 
-#' @family workspace functions
-#' 
-#' @param account_id Account Id
-#' @param container_id Container Id
-#' @param workspace_id Workspace Id
-#'
-#' @description
-#' Get the entire contents of a workspace
-#' 
-#' @export
-
-gtm_workspaces_export <- function(account_id,
-                                   container_id,
-                                   workspace_id){
-  
-  if (any(missing(account_id),
-          missing(container_id),
-          missing(workspace_id)
-  )) {
-    stop("Account Id, Container Id and Workspace Id are all required for this function.")
-  }
-  
-  
-  
-  path_args <- list(
-    accounts = account_id,
-    containers = container_id,
-    workspaces = workspace_id,
-    export = ""
-  )
-  
-  
-  res <- gtm_get(path_args = path_args)
-  
-  return(res)
-  
-  
+  invisible(res)
 }

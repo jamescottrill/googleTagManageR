@@ -15,8 +15,40 @@ gtm_containers_delete(account_id, container_id, force = c("TRUE", "FALSE"))
 }
 \description{
 This deletes a GTM container from an account. This is an irreversible process, so it's recommended that you first back up the container.
+}
+\examples{
+\dontrun{
 
- @export
+accountId <- 1234567
+containerId <- 7654321
+gtm_conainers_delete(accountId, containerId, "TRUE")
+
+
+containerId <- 7654567
+
+gtm_containers_delete(accountId, containerId)
+
+# !!WARNING!! This command will delete your container.
+# This operation is irrevocable.
+# It is strongly recommended that you create an export of your container before you delete it, just in case you ever want it again.
+# Are you sure you want to continue?
+
+#  1: Yes
+#  2: No
+
+# Selection: 1
+
+# Are You really sure you want to delete this container?
+
+#  1: Yes
+#  2: No
+
+# Selection: 1
+
+# Container 7654567 has been deleted.
+
+}
+
 }
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/delete}

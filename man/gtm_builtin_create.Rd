@@ -16,7 +16,25 @@ gtm_builtin_create(account_id, container_id, workspace_id, variable)
 \item{variable}{A Builtin Variable or list of built in variables. Valid values are here \code{\link{variables_list}}}
 }
 \description{
-This enables one of the built-in variables in GTM
+This enables one of the built-in variables in GTM.  It is the inverse of \code{\link{gtm_builtin_delete}}
+}
+\examples{
+\dontrun{
+
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 10
+variable <- 'clickId'
+
+builtinVaribles<- gtm_builtin_create(accountId, containerId, workspaceId, variable)
+
+listOfVaribales <- c('clickClasses', 'clickElement')
+
+newEnabledVars <- gtm_builtin_create(accountId, containerId, workspaceId, listOfVaribales)
+
+}
+
+
 }
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/built_in_variables/create}

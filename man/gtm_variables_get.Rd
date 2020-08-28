@@ -19,14 +19,27 @@ gtm_variables_get(account_id, container_id, workspace_id, variable_id)
 This will return a list with the settings of a single variable.
 If you want to get the information for all variables, use \code{gtm_variables_list}
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 10
+variableId = 100
+
+variable <- gtm_variables_get(accountId, containerId, workspaceId, variableId)
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/get}
 
-Other variable structure functions: 
+Other variable functions: 
 \code{\link{gtm_variables_create}()},
 \code{\link{gtm_variables_delete}()},
 \code{\link{gtm_variables_list}()},
 \code{\link{gtm_variables_revert}()},
 \code{\link{gtm_variables_update}()}
 }
-\concept{variable structure functions}
+\concept{variable functions}

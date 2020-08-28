@@ -1,15 +1,26 @@
 #' List a single version in a workspace
 #' 
 #' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/get}
-#' @family version structure functions
+#' @family version functions
 #' 
 #' @description
 #'
-#' This returns a single 
+#' This returns a single workspace version
 #' 
 #' @param account_id Account Id
 #' @param container_id Container Id
 #' @param version_id Version Id
+#' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' versionId <- 6
+#' 
+#' version <- gtm_versions_get(accountId, containerId, versionId)
+#' 
+#' }
 #' 
 #' @export
 gtm_versions_get <- function(account_id,container_id,version_id) {
@@ -38,7 +49,7 @@ gtm_versions_get <- function(account_id,container_id,version_id) {
 #' Update a container version
 #'
 #' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/update}
-#' @family version structure functions
+#' @family version functions
 #' 
 #' @description
 #'
@@ -49,6 +60,19 @@ gtm_versions_get <- function(account_id,container_id,version_id) {
 #' @param version_id Version Id
 #' @param name Version Name
 #' @param description Version Description
+#' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' versionId <- 6
+#' newName <- 'My Cool New Version'
+#' newDescription <- 'My new version does something cool'
+#' version <- gtm_versions_update(accountId, containerId, versionId, newName, newDescription)
+#' 
+#' }
+#' 
 #' @export
 gtm_versions_update <- function(account_id,container_id,version_id, name = NULL, description = NULL) {
   
@@ -89,7 +113,7 @@ gtm_versions_update <- function(account_id,container_id,version_id, name = NULL,
 #' Delete a container version
 #'
 #' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/delete}
-#' @family version structure functions
+#' @family version functions
 #' 
 #' @description
 #'
@@ -99,6 +123,32 @@ gtm_versions_update <- function(account_id,container_id,version_id, name = NULL,
 #' @param container_id Container Id
 #' @param version_id Version Id
 #' @param force Force deletion without user input
+#' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' versionId <- 6
+#' 
+#' gtm_versions_delete(accountId, containerId, versionId)
+#' 
+#' # This will delete Version %s. Are you sure you want to continue?
+#' 
+#' #  1: Yes
+#' #  2: No
+#'
+#' # Selection: 1
+#' 
+#' # Version 6 has been deleted.
+#' 
+#' tagId = 7
+#' 
+#' gtm_versions_delete(accountId, containerId, versionId, "TRUE")
+#' 
+#' # Version 7 has been deleted.
+#' 
+#' }
 #' 
 #' @export
 gtm_versions_delete <- function(account_id, container_id, version_id, force = c("TRUE","FALSE")) {
@@ -143,7 +193,7 @@ gtm_versions_delete <- function(account_id, container_id, version_id, force = c(
 #' Sets a container version as the latest version
 #' 
 #' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/set_latest}
-#' @family versions structure functions
+#' @family versions functions
 #' 
 #' @param account_id Account Id
 #' @param container_id Container Id
@@ -151,6 +201,17 @@ gtm_versions_delete <- function(account_id, container_id, version_id, force = c(
 #'
 #' @description
 #' Sets the given container version as the latest version
+#' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' versionId <- 6
+#' 
+#' version <- gtm_versions_setlatest(accountId, containerId, versionId)
+#' 
+#' }
 #' 
 #' 
 #' @export
@@ -170,13 +231,13 @@ gtm_versions_setlatest <- function(account_id,container_id,version_id) {
   )
   res <- gtm_action(path_args = path_args, action = "set_latest")
   myMessage(sprintf("Version %s has been set to the latest version", res$containerVersionId), level=3)
-  return(res)
+  invisible(res)
 }
 
 #' Undeletes a container version
 #' 
 #' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/undelete}
-#' @family versions structure functions
+#' @family versions functions
 #' 
 #' @param account_id Account Id
 #' @param container_id Container Id
@@ -184,6 +245,17 @@ gtm_versions_setlatest <- function(account_id,container_id,version_id) {
 #'
 #' @description
 #' Undeletes a container version
+#' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' versionId <- 6
+#' 
+#' version <- gtm_versions_undelete(accountId, containerId, versionId)
+#' 
+#' }
 #' 
 #' 
 #' @export
@@ -210,7 +282,7 @@ gtm_versions_undelete <- function(account_id, container_id, version_id) {
 #' Publish a new container version
 #' 
 #' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/publish}
-#' @family versions structure functions
+#' @family versions functions
 #' 
 #' @param account_id Account Id
 #' @param container_id Container Id
@@ -218,6 +290,17 @@ gtm_versions_undelete <- function(account_id, container_id, version_id) {
 #'
 #' @description
 #' Publishes a container version to be live
+#' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' versionId <- 6
+#' 
+#' version <- gtm_versions_publish(accountId, containerId, versionId)
+#' 
+#' }
 #' 
 #' 
 #' @export

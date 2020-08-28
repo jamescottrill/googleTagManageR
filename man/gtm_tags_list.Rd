@@ -15,16 +15,28 @@ gtm_tags_list(account_id, container_id, workspace_id)
 }
 \description{
 This will return a data frame all your available tags in a given workspace
-If you want to get the information for a single tag, use \code{gtm_tagss_get}
+If you want to get the information for a single tag, use \code{gtm_tags_get}
+}
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 10
+
+tags <- gtm_tags_list(accountId, containerId, workspaceId)
+
+}
+
 }
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/list}
 
-Other tag structure functions: 
+Other tag functions: 
 \code{\link{gtm_tags_create}()},
 \code{\link{gtm_tags_delete}()},
 \code{\link{gtm_tags_get}()},
 \code{\link{gtm_tags_revert}()},
 \code{\link{gtm_tags_update}()}
 }
-\concept{tag structure functions}
+\concept{tag functions}

@@ -17,6 +17,20 @@ gtm_headers_list(account_id, container_id, includeDeleted = c("TRUE", "FALSE"))
 This will return a data frame all container versions.
 If you want to get the information for the most recent version, use \code{gtm_headers_latest}
 }
+\examples{
+\dontrun{
+
+accountId <- 1234567
+containerId <- 7654321
+
+
+headers <- gtm_headers_list(accountId, containerId)
+
+headersWithDeleted <- gtm_headers_list(accountId, containerId, 'TRUE')
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/version_headers/list}
 

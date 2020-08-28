@@ -26,14 +26,42 @@ gtm_variables_delete(
 \description{
 This deletes a variable in a GTM workspace
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 10
+variableId <- 30
+
+gtm_variables_delete(accountId, containerId, workspaceId, variableId)
+
+# This will delete tag \%s. Are you sure you want to continue?
+
+#  1: Yes
+#  2: No
+
+# Selection: 1
+
+# Variable 30 has been deleted.
+
+variableId = 31
+
+gtm_variables_delete(accountId, containerId, workspaceId, variableId, "TRUE")
+
+# Variable 31 has been deleted.
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/delete}
 
-Other variable structure functions: 
+Other variable functions: 
 \code{\link{gtm_variables_create}()},
 \code{\link{gtm_variables_get}()},
 \code{\link{gtm_variables_list}()},
 \code{\link{gtm_variables_revert}()},
 \code{\link{gtm_variables_update}()}
 }
-\concept{variable structure functions}
+\concept{variable functions}

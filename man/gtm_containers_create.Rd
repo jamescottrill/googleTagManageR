@@ -25,8 +25,16 @@ gtm_containers_create(
 }
 \description{
 This creates a new container in the specified account.
+}
+\examples{
+\dontrun{
+accountId <- 1234567
+newName <- "My New Container"
 
- @export
+container <- gtm_containers_create(accountId, newName, 'web')
+
+}
+
 }
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/create}

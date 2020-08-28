@@ -23,11 +23,11 @@ This takes a zone resource and overwrites the existing zone in GTM
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/update}
 
-Other zone structure functions: 
+Other zone functions: 
 \code{\link{gtm_zones_create}()},
 \code{\link{gtm_zones_delete}()},
 \code{\link{gtm_zones_get}()},
 \code{\link{gtm_zones_list}()},
 \code{\link{gtm_zones_revert}()}
 }
-\concept{zone structure functions}
+\concept{zone functions}

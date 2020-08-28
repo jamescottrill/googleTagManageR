@@ -1,16 +1,27 @@
 #' List all tags in a workspace
 #' 
 #' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/list}
-#' @family tag structure functions
+#' @family tag functions
 #' 
 #' @description
 #'
 #' This will return a data frame all your available tags in a given workspace
-#' If you want to get the information for a single tag, use \code{gtm_tagss_get}
+#' If you want to get the information for a single tag, use \code{gtm_tags_get}
 #' 
 #' @param account_id Account Id
 #' @param container_id Container Id
 #' @param workspace_id Workspace Id
+#' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 10
+#' 
+#' tags <- gtm_tags_list(accountId, containerId, workspaceId)
+#' 
+#' }
 #' 
 #' @export
 gtm_tags_list <- function(account_id, container_id, workspace_id) {
@@ -30,10 +41,10 @@ gtm_tags_list <- function(account_id, container_id, workspace_id) {
   return(res)
 }
 
-#' List all tags in a workspace
+#' Get one tag in a workspace
 #' 
 #' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/get}
-#' @family tag structure functions
+#' @family tag functions
 #' 
 #' @description
 #'
@@ -44,6 +55,18 @@ gtm_tags_list <- function(account_id, container_id, workspace_id) {
 #' @param container_id Container Id
 #' @param workspace_id Workspace Id
 #' @param tag_id Tag Id
+#' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 10
+#' tagId = 100
+#' 
+#' tag <- gtm_tags_get(accountId, containerId, workspaceId, tagId)
+#' 
+#' }
 #' 
 #' @export
 gtm_tags_get <- function(account_id,container_id,workspace_id,tag_id) {
@@ -70,7 +93,7 @@ gtm_tags_get <- function(account_id,container_id,workspace_id,tag_id) {
 #' Create a new tag
 #'
 #' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/create}
-#' @family tag structure functions
+#' @family tag functions
 #' 
 #' @description
 #'
@@ -81,6 +104,35 @@ gtm_tags_get <- function(account_id,container_id,workspace_id,tag_id) {
 #' @param workspace_id Workspace Id
 #' @param tag_object Tag Object
 #' 
+#' @examples 
+#' \dontrun{
+#' 
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 5
+#' #In the Tag Object below you will need to substitute your own trigger Id - see \code{gtm_triggers_list} and \code{gtm_triggers_create}
+#' tag <- list(
+#'   name = "Example DataLayer Push",
+#'   type = "html",
+#'   tagFiringOption = "oncePerEvent",
+#'   parameter = list(
+#'     list(
+#'       type = "template",
+#'       key = "html",
+#'       value = "<script>\n   window.dataLayer=window.dataLayer||[];\n   window.dataLayer.push({\"event\": \"demoEvent\"});\n</script>"
+#'     ),
+#'     list(
+#'       type = "boolean",
+#'       key = "supportDocumentWrite",
+#'       value = "false"
+#'     )
+#'   ),
+#'   firingTriggerId = 20,
+#'   tagFiringOption = "oncePerPage"
+#' )
+#' 
+#' newTag <- gtm_tags_create(accountId, containerId, workspaceId, tag)
+#' }
 #' @export
 gtm_tags_create <- function(account_id,container_id,workspace_id,tag_object) {
   
@@ -110,7 +162,7 @@ gtm_tags_create <- function(account_id,container_id,workspace_id,tag_object) {
 #' Update an existing tag
 #'
 #' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/update}
-#' @family tag structure functions
+#' @family tag functions
 #' 
 #' @description
 #'
@@ -121,6 +173,37 @@ gtm_tags_create <- function(account_id,container_id,workspace_id,tag_object) {
 #' @param workspace_id Workspace Id
 #' @param tag_id Tag Id
 #' @param tag_object Tag Object
+#' 
+#' @examples 
+#' \dontrun{
+#' 
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 5
+#' tagId <- 11
+#' 
+#' tag <- list(
+#'   name = "Example DataLayer Push",
+#'   type = "html",
+#'   tagFiringOption = "oncePerEvent",
+#'   parameter = list(
+#'     list(
+#'       type = "template",
+#'       key = "html",
+#'       value = "<script>\n   window.dataLayer=window.dataLayer||[];\n   window.dataLayer.push({\"event\": \"demoEvent\"});\n</script>"
+#'     ),
+#'     list(
+#'       type = "boolean",
+#'       key = "supportDocumentWrite",
+#'       value = "false"
+#'     )
+#'   ),
+#'   firingTriggerId = 20,
+#'   tagFiringOption = "oncePerPage"
+#' )
+#' 
+#' updatedTag <- gtm_tags_update(accountId, containerId, workspaceId, tagId, tag)
+#' }
 #' 
 #' @export
 gtm_tags_update <- function(account_id, container_id, workspace_id, tag_id, tag_object) {
@@ -150,7 +233,7 @@ gtm_tags_update <- function(account_id, container_id, workspace_id, tag_id, tag_
 #' Delete a tag
 #'
 #' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/delete}
-#' @family tag structure functions
+#' @family tag functions
 #' @importFrom utils menu
 #' 
 #' @description
@@ -162,6 +245,33 @@ gtm_tags_update <- function(account_id, container_id, workspace_id, tag_id, tag_
 #' @param workspace_id Workspace Id
 #' @param tag_id Tag Id
 #' @param force Force deletion without user input
+#' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 10
+#' tagId <- 100
+#' 
+#' gtm_tags_delete(accountId, containerId, workspaceId, tagId)
+#' 
+#' # This will delete tag %s. Are you sure you want to continue?
+#' 
+#' #  1: Yes
+#' #  2: No
+#'
+#' # Selection: 1
+#' 
+#' # Tag 100 has been deleted.
+#' 
+#' tagId = 101
+#' 
+#' gtm_tags_delete(accountId, containerId, workspaceId, tagId, "TRUE")
+#' 
+#' # Tag 101 has been deleted.
+#' 
+#' }
 #' 
 #' @export
 gtm_tags_delete <-function(account_id, container_id, workspace_id, tag_id, force = c("TRUE","FALSE")) {
@@ -209,7 +319,7 @@ gtm_tags_delete <-function(account_id, container_id, workspace_id, tag_id, force
 #' Reverts a tag,
 #'
 #' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/revert}
-#' @family tag structure functions
+#' @family tag functions
 #' 
 #' @description
 #'
@@ -219,6 +329,19 @@ gtm_tags_delete <-function(account_id, container_id, workspace_id, tag_id, force
 #' @param container_id Container Id
 #' @param workspace_id Workspace Id
 #' @param tag_id Tag Id
+#' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 10
+#' tagId <- 102
+#' 
+#' tag <- gtm_tags_revert(accountId, containerId, workspaceId, tagId)
+#' 
+#' # Changes to tag 102 have been reverted
+#' }
 #' 
 #' @export
 gtm_tags_revert <- function(account_id, container_id, workspace_id, tag_id) {

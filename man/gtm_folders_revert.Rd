@@ -18,6 +18,19 @@ gtm_folders_revert(account_id, container_id, workspace_id, folder_id)
 \description{
 This reverts any changes to a folder in the current workspace
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 3
+folderId <- 1
+
+folder <- gtm_folders_revert(accountId, containerId, workspaceId, folderId)
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/revert}
 

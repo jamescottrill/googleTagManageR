@@ -13,8 +13,16 @@ gtm_environments_list(account_id, container_id)
 }
 \description{
 This lists the environments in a specified container.
+}
+\examples{
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
 
- @export
+environments <- gtm_environments_list(accountId, containerId)
+
+}
+
 }
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/environments/list}

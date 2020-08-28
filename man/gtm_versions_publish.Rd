@@ -16,11 +16,24 @@ gtm_versions_publish(account_id, container_id, version_id)
 \description{
 Publishes a container version to be live
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+versionId <- 6
+
+version <- gtm_versions_publish(accountId, containerId, versionId)
+
+}
+
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/publish}
 
-Other versions structure functions: 
+Other versions functions: 
 \code{\link{gtm_versions_setlatest}()},
 \code{\link{gtm_versions_undelete}()}
 }
-\concept{versions structure functions}
+\concept{versions functions}

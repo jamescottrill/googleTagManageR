@@ -12,6 +12,19 @@
 #' @param container_id Container Id
 #' @param includeDeleted Include deleted version - Default False
 #' 
+#' @examples 
+#' \dontrun{
+#' 
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' 
+#' 
+#' headers <- gtm_headers_list(accountId, containerId)
+#' 
+#' headersWithDeleted <- gtm_headers_list(accountId, containerId, 'TRUE')
+#' 
+#' }
+#' 
 #' @export
 gtm_headers_list <- function(account_id, container_id, includeDeleted=c("TRUE","FALSE")) {
   
@@ -51,6 +64,18 @@ gtm_headers_list <- function(account_id, container_id, includeDeleted=c("TRUE","
 #' 
 #' @param account_id Account Id
 #' @param container_id Container Id
+#' 
+#' @examples 
+#' \dontrun{
+#' 
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' 
+#' 
+#' latestHeader <- gtm_headers_latest(accountId, containerId)
+#' 
+#' 
+#' }
 #' 
 #' @export
 gtm_headers_latest <- function(account_id, container_id) {

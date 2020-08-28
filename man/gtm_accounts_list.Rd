@@ -9,6 +9,15 @@ gtm_accounts_list()
 \description{
 This will return a data frame all your available accounts, returning the path, account Id and account name.
 }
+\examples{
+
+\dontrun{
+
+accounts <- gtm_accounts_list()
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/list}
 

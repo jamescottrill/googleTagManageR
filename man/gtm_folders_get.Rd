@@ -19,6 +19,19 @@ gtm_folders_get(account_id, container_id, workspace_id, folder_id)
 This returns a list containing all the metadata for a single folder in a workspace
 If you want to get the information for all folders, use \code{gtm_folders_list}
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 3
+folderId <- 1
+
+folder <- gtm_folders_list(accountId, containerId, workspaceId, folderId)
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/get}
 

@@ -28,8 +28,17 @@ gtm_environments_create(
 }
 \description{
 This creates a new GTM environment
+}
+\examples{
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
 
- @export
+env <- gtm_environments_create(accountId, containerId, "Development")
+
+pp_env <- gtm_environments_create(accountId, containerId, "Pre-Prod", debug=TRUE, url="https://pp.example.com")
+}
+
 }
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/environments/update}

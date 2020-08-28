@@ -34,7 +34,64 @@ gtm_workspaces_resolve(
 }
 \description{
 Resolves a merge conflict for a workspace entity by updating it to the resolved 
-entity passed in the request.
+entity passed in the request. This is one of the more complex functions, however if you
+are using this package for automation you will most probably want to keep the version from
+the current workspace not the base version, which is shown in hte example.
+}
+\examples{
+
+\dontrun{
+
+ # Comlpexities arise converting the list created in R into the correct JSON for GTM, specifically for the 
+ # Monitoring Metadata in Tags, so this is brought out, converted separately and then included in the tag 
+ # before it is resolved.
+
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 10
+
+mergeConflicts <- gtm_workspaces_sync(accountId, containerId, workspaceId)
+
+for(i in 1:nrow(mergeConflicts$mergeConflict$entityInWorkspace)){
+    tag <- NULL
+    trigger <- NULL
+    variable <- NULL
+    folder <- NULL
+    obj <- mergeConflicts$mergeConflict$entityInWorkspace[i,]
+    if(!is.na(obj$tag$path)){
+       tag <- obj$tag
+       if(is.null(tag$monitoringMetadata$map)){
+       tag <- tag \%>\% select(-monitoringMetadata)
+       tag <- as.list(tag) \%>\% lapply(function(x){if(is.null(x[[1]])){x<-NA}else{x<-x}}) \%>\% lapply(function(x) x[!is.na(x)])
+       } else{
+       metadataMap <- tag$monitoringMetadata$map[[1]]
+       metadata <- list(
+           type = 'map',
+           map = metadataMap
+       )
+       tag <- as.list(tag) \%>\% lapply(function(x){if(is.null(x[[1]])){x<-NA}else{x<-x}}) \%>\% lapply(function(x) x[!is.na(x)])
+       tag$monitoringMetadata <- metadata
+       }
+       
+    }
+    if(!is.na(obj$trigger$path)){
+       trigger <- obj$trigger
+       trigger<-as.list(trigger) \%>\% lapply(function(x){if(is.null(x[[1]])){x<-NA}else{x<-x}}) \%>\% lapply(function(x) x[!is.na(x)])
+    }
+    if(!is.na(obj$variable$path)){
+       variable <- obj$variable
+       variable<-as.list(variable) \%>\% lapply(function(x){if(is.null(x[[1]])){x<-NA}else{x<-x}}) \%>\% lapply(function(x) x[!is.na(x)])
+    }
+    if(!is.na(obj$folder$path)){
+       folder <- obj$folder
+       folder<-as.list(folder) \%>\% lapply(function(x){if(is.null(x[[1]])){x<-NA}else{x<-x}}) \%>\% lapply(function(x) x[!is.na(x)])
+    }
+    changeStatus <- obj$changeStatus
+    
+    resolve <- gtm_workspaces_resolve(accountId, containerId, workspaceId, tag, trigger, variable, folder, changeStatus)
+  }
+}
+
 }
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/resolve_conflict}
@@ -42,7 +99,6 @@ entity passed in the request.
 Other workspace functions: 
 \code{\link{gtm_workspaces_create}()},
 \code{\link{gtm_workspaces_delete}()},
-\code{\link{gtm_workspaces_export}()},
 \code{\link{gtm_workspaces_get}()},
 \code{\link{gtm_workspaces_list}()},
 \code{\link{gtm_workspaces_preview}()},

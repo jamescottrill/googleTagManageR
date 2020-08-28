@@ -14,8 +14,16 @@ gtm_containers_get(account_id, container_id)
 \description{
 This returns a list containing all the metadata about a single container.
 If you want to get the information for all containers, use \code{gtm_containers_list}
+}
+\examples{
+\dontrun{
 
- @export
+accountId <- 1234567
+containerId <- 7654321
+container <- gtm_containers_get(accountId, containerId)
+
+}
+
 }
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/get}

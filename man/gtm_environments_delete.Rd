@@ -22,8 +22,31 @@ gtm_environments_delete(
 }
 \description{
 This deletes a GTM environment
+}
+\examples{
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+environmentId <- 3
 
- @export
+gtm_environments_delete(accountId, containerId, environmentId, TRUE)
+
+environmentId <- 4
+
+gtm_environments_delete(accountId, containerId, environmentId)
+
+#  This will delete environment 4 Are you sure you want to continue?"
+
+#  1: Yes
+#  2: No
+
+# Selection: 1
+
+
+# Environment 4 has been deleted.
+
+}
+
 }
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/environments/reauthorize}

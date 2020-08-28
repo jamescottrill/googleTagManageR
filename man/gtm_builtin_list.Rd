@@ -16,6 +16,18 @@ gtm_builtin_list(account_id, container_id, workspace_id)
 \description{
 This will return a data frame all enabled built-in variables in a given workspace
 }
+\examples{
+\dontrun{
+
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 10
+
+builtinVaribles<- gtm_builtin_list(accountId, containerId, workspaceId)
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/built_in_variables/list}
 

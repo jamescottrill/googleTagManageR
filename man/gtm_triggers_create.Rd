@@ -13,19 +13,61 @@ gtm_triggers_create(account_id, container_id, workspace_id, trigger_object)
 
 \item{workspace_id}{Workspace Id}
 
-\item{trigger_object}{trigger Object}
+\item{trigger_object}{Trigger Object}
 }
 \description{
 This takes a trigger resource and creates a new trigger in GTM.
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 3
+
+trigger <- list(
+  name = 'Demo Trigger',
+  type = 'pageview'
+)
+
+newTrigger <- gtm_triggers_create(accountId, containerId, workspaceId, trigger)
+
+trigger2 <- list(
+name = 'More Complex Trigger',
+type = 'pageview',
+filter = list(
+  list(
+    type = 'contains',
+    parameter = list(
+     list(
+       type='template',
+       key = 'arg0',
+       value='{{Lookup Table}}'
+     ),
+     list(
+       type='template',
+       key = 'arg1',
+       value='Lookup Value'
+     )
+    )
+   )
+  )
+ )
+
+newTrigger2 <- gtm_triggers_create(accountId, containerId, workspaceId, trigger2)
+
+}
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/create}
 
-Other trigger structure functions: 
+\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers#resource}
+
+Other trigger functions: 
 \code{\link{gtm_triggers_delete}()},
 \code{\link{gtm_triggers_get}()},
 \code{\link{gtm_triggers_list}()},
 \code{\link{gtm_triggers_revert}()},
 \code{\link{gtm_triggers_update}()}
 }
-\concept{trigger structure functions}
+\concept{trigger functions}

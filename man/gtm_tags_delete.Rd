@@ -26,14 +26,42 @@ gtm_tags_delete(
 \description{
 This deletes a tag in a GTM workspace
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 10
+tagId <- 100
+
+gtm_tags_delete(accountId, containerId, workspaceId, tagId)
+
+# This will delete tag \%s. Are you sure you want to continue?
+
+#  1: Yes
+#  2: No
+
+# Selection: 1
+
+# Tag 100 has been deleted.
+
+tagId = 101
+
+gtm_tags_delete(accountId, containerId, workspaceId, tagId, "TRUE")
+
+# Tag 101 has been deleted.
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/delete}
 
-Other tag structure functions: 
+Other tag functions: 
 \code{\link{gtm_tags_create}()},
 \code{\link{gtm_tags_get}()},
 \code{\link{gtm_tags_list}()},
 \code{\link{gtm_tags_revert}()},
 \code{\link{gtm_tags_update}()}
 }
-\concept{tag structure functions}
+\concept{tag functions}

@@ -16,7 +16,15 @@ gtm_environments_get(account_id, container_id, environment_id)
 \description{
 This gets the metadata for a single GTM Environment
 
- @export
+ @examples 
+ \dontrun{ 
+accountId <- 1234567
+containerId <- 7654321
+environmentId <- 3
+
+environmnet <- gtm_environments_get(accountId, containerId, environmentId)
+
+}
 }
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/environments/get}

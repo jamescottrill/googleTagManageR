@@ -26,11 +26,24 @@ gtm_versions_update(
 \description{
 Updates a container Version
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+versionId <- 6
+newName <- 'My Cool New Version'
+newDescription <- 'My new version does something cool'
+version <- gtm_versions_update(accountId, containerId, versionId, newName, newDescription)
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/update}
 
-Other version structure functions: 
+Other version functions: 
 \code{\link{gtm_versions_delete}()},
 \code{\link{gtm_versions_get}()}
 }
-\concept{version structure functions}
+\concept{version functions}

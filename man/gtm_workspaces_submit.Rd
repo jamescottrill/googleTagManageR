@@ -27,13 +27,27 @@ gtm_workspaces_submit(
 This creates a new version of the GTM container, but does not publish it
 as a live version. The name and notes will be permanently visible for the container version.
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 6
+name <- 'New Analytics Tags'
+notes <- 'Adding element visibility tags and scroll tracking'
+
+workspace <- gtm_workspaces_update(accountId, containerId, workspaceId, name, notes)
+
+}
+
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/create_version}
 
 Other workspace functions: 
 \code{\link{gtm_workspaces_create}()},
 \code{\link{gtm_workspaces_delete}()},
-\code{\link{gtm_workspaces_export}()},
 \code{\link{gtm_workspaces_get}()},
 \code{\link{gtm_workspaces_list}()},
 \code{\link{gtm_workspaces_preview}()},

@@ -15,13 +15,23 @@ gtm_workspaces_list(account_id, container_id)
 This will return a data frame all your available workspaces in a given container.
 If you want to get the information for a single workspace, use \code{gtm_workspaces_get}
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+
+workspaces <- gtm_workspaces_list(accountId, containerId)
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/list}
 
 Other workspace functions: 
 \code{\link{gtm_workspaces_create}()},
 \code{\link{gtm_workspaces_delete}()},
-\code{\link{gtm_workspaces_export}()},
 \code{\link{gtm_workspaces_get}()},
 \code{\link{gtm_workspaces_preview}()},
 \code{\link{gtm_workspaces_resolve}()},

@@ -15,6 +15,19 @@ gtm_headers_latest(account_id, container_id)
 This will return the latest container version header
 If you want to get the information for the most all container versions, use \code{gtm_headers_list}
 }
+\examples{
+\dontrun{
+
+accountId <- 1234567
+containerId <- 7654321
+
+
+latestHeader <- gtm_headers_latest(accountId, containerId)
+
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/version_headers/latest}
 

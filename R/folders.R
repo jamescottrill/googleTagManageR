@@ -12,6 +12,17 @@
 #' This returns a dataframe containing all the folder in a workspace
 #' If you want to get the information for a single folder, use \code{gtm_folders_get}
 #' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 3
+#' 
+#' folders <- gtm_folders_list(accountId, containerId, workspaceId)
+#' 
+#' }
+#' 
 #' @export
 gtm_folders_list <- function(account_id, container_id, workspace_id) {
   if (any(missing(account_id),
@@ -46,6 +57,18 @@ gtm_folders_list <- function(account_id, container_id, workspace_id) {
 #'
 #' This returns a list containing all the metadata for a single folder in a workspace
 #' If you want to get the information for all folders, use \code{gtm_folders_list}
+#' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 3
+#' folderId <- 1
+#' 
+#' folder <- gtm_folders_list(accountId, containerId, workspaceId, folderId)
+#' 
+#' }
 #' 
 #' @export
 gtm_folders_get <- function(account_id,container_id,workspace_id,folder_id) {
@@ -83,7 +106,19 @@ gtm_folders_get <- function(account_id,container_id,workspace_id,folder_id) {
 #' @description
 #'
 #' This creates a new folder in the specified workspaces
-
+#' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 3
+#' folderName <- "Analytics Tags"
+#' folderNotes <- "All our website's Google Analytics Tags"
+#' 
+#' folder <- gtm_folders_create(accountId, containerId, workspaceId, folderName, folderNotes)
+#' 
+#' }
 #' 
 #' @export
 gtm_folders_create<-function(account_id, container_id, workspace_id, name, notes = NULL){
@@ -129,6 +164,19 @@ gtm_folders_create<-function(account_id, container_id, workspace_id, name, notes
 #' @description
 #'
 #' This updates a folder in the specified workspaces
+#' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 3
+#' folderName <- "New Analytics Tags"
+#' folderNotes <- "All our website's Google Analytics App+Web Tags"
+#' 
+#' folder <- gtm_folders_update(accountId, containerId, workspaceId, folderName, folderNotes)
+#' 
+#' }
 #' 
 #' @export
 gtm_folders_update <- function(account_id, container_id, workspace_id, folder_id, name = NULL, notes = NULL) {
@@ -177,7 +225,18 @@ gtm_folders_update <- function(account_id, container_id, workspace_id, folder_id
 #'
 #' @description
 #'
-#' This updates a folder in the specified workspaces
+#' This deletes a folder in the specified workspaces
+#' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 3
+#' 
+#' gtm_folders_delete(accountId, containerId, workspaceId, force=TRUE)
+#' 
+#' }
 #' 
 #' @export
 gtm_folders_delete <-function(account_id, container_id, workspace_id, folder_id, force = c("TRUE","FALSE")) {
@@ -234,6 +293,18 @@ gtm_folders_delete <-function(account_id, container_id, workspace_id, folder_id,
 #'
 #' This reverts any changes to a folder in the current workspace
 #' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 3
+#' folderId <- 1
+#' 
+#' folder <- gtm_folders_revert(accountId, containerId, workspaceId, folderId)
+#' 
+#' }
+#' 
 #' @export
 gtm_folders_revert <- function(account_id, container_id, workspace_id, folder_id) {
   
@@ -269,6 +340,18 @@ gtm_folders_revert <- function(account_id, container_id, workspace_id, folder_id
 #' @description
 #'
 #' This lists all entities in a GTM Folder.
+#' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 3
+#' folderId <- 1
+#' 
+#' folder <- gtm_folders_entities(accountId, containerId, workspaceId, folderId)
+#' 
+#' }
 #' 
 #' @export
 gtm_folders_entities<-function(account_id, container_id, workspace_id, folder_id){
@@ -307,6 +390,25 @@ gtm_folders_entities<-function(account_id, container_id, workspace_id, folder_id
 #' @description
 #'
 #' This moves entities to a new folder.
+#' 
+#' @examples
+#' 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 3
+#' folderId <- 1
+#' tags = 12
+#' 
+#' 
+#' gtm_folders_move(accountId, containerId, workspaceId, folderId, tags = tags)
+#' 
+#' triggers = c(1,2,3)
+#' tags = c(4,5,6)
+#' 
+#' gtm_folders_move(accountId, containerId, workspaceId, folderId, tags = tags)
+#' 
+#' }
 #' 
 #' @export
 gtm_folders_move<-function(account_id, container_id, workspace_id, folder_id, tags = NULL, triggers = NULL, variables = NULL){

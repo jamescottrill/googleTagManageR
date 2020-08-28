@@ -18,14 +18,26 @@ gtm_zones_revert(account_id, container_id, workspace_id, zone_id)
 \description{
 This reverts a zone back to its original, unmodified state.
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 11
+zoneId <- 5
+
+zone <- gtm_zones_revert(accountId, containerId, workspaceId, zoneId)
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/revert}
 
-Other zone structure functions: 
+Other zone functions: 
 \code{\link{gtm_zones_create}()},
 \code{\link{gtm_zones_delete}()},
 \code{\link{gtm_zones_get}()},
 \code{\link{gtm_zones_list}()},
 \code{\link{gtm_zones_update}()}
 }
-\concept{zone structure functions}
+\concept{zone functions}

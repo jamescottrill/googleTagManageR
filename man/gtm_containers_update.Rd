@@ -29,8 +29,16 @@ gtm_containers_update(
 \description{
 This updates a GTM Container.
 Although you can't change the type of container, it is still required for this function to work.
+}
+\examples{
+\dontrun{
 
- @export
+accountId <- 1234567
+containerId <- 7654321
+containers <- gtm_containers_update(accountId, containerId, 'New Container Name', 'amp')
+
+}
+
 }
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/update}

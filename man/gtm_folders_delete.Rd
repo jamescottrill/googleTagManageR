@@ -24,7 +24,19 @@ gtm_folders_delete(
 \item{force}{Force deletion without user input}
 }
 \description{
-This updates a folder in the specified workspaces
+This deletes a folder in the specified workspaces
+}
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 3
+
+gtm_folders_delete(accountId, containerId, workspaceId, force=TRUE)
+
+}
+
 }
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/delete}

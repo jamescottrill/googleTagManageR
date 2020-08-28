@@ -17,13 +17,24 @@ gtm_workspaces_get(account_id, container_id, workspace_id)
 This returns a list containing the metadata about a single Workspace
 If you want to get the information for all workspaces, use \code{gtm_workspaces_list}
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 5
+
+workspace <- gtm_workspaces_get(accountId, containerId, workspaceId)
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/get}
 
 Other workspace functions: 
 \code{\link{gtm_workspaces_create}()},
 \code{\link{gtm_workspaces_delete}()},
-\code{\link{gtm_workspaces_export}()},
 \code{\link{gtm_workspaces_list}()},
 \code{\link{gtm_workspaces_preview}()},
 \code{\link{gtm_workspaces_resolve}()},

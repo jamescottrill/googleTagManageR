@@ -16,11 +16,24 @@ gtm_versions_setlatest(account_id, container_id, version_id)
 \description{
 Sets the given container version as the latest version
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+versionId <- 6
+
+version <- gtm_versions_setlatest(accountId, containerId, versionId)
+
+}
+
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/set_latest}
 
-Other versions structure functions: 
+Other versions functions: 
 \code{\link{gtm_versions_publish}()},
 \code{\link{gtm_versions_undelete}()}
 }
-\concept{versions structure functions}
+\concept{versions functions}

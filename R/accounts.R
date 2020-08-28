@@ -7,6 +7,14 @@
 #'
 #' This will return a data frame all your available accounts, returning the path, account Id and account name.
 #' 
+#' @examples 
+#' 
+#' \dontrun{
+#' 
+#' accounts <- gtm_accounts_list()
+#' 
+#' }
+#' 
 #' @export
 gtm_accounts_list <- function() {
   path_args <- list(
@@ -27,6 +35,14 @@ gtm_accounts_list <- function() {
 #'
 #' This returns a list containing the metadata about a single account.
 #' If you want to get the information for all accounts, use \code{gtm_accounts_list}
+#' 
+#' @examples 
+#' \dontrun{
+#' 
+#' account_id <- 12345678
+#' account <- gtm_accounts_get(account_id)
+#'
+#' }
 #' 
 #' @export
 gtm_accounts_get <- function(account_id) {
@@ -50,6 +66,13 @@ gtm_accounts_get <- function(account_id) {
 #'
 #' This enables you to update the account metadata. You can update the account name and whether or not data is shared with Google.
 #' 
+#' @examples 
+#' \dontrun{
+#' 
+#' account_id <- 12345678
+#' new_account <- gtm_accounts_update(account_id, name = "New Container Name")
+#'
+#' }
 #' @export
 gtm_accounts_update <- function(account_id, name = NULL, shareData=c("TRUE","FALSE")) {
   

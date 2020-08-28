@@ -16,6 +16,14 @@ gtm_accounts_update(account_id, name = NULL, shareData = c("TRUE", "FALSE"))
 \description{
 This enables you to update the account metadata. You can update the account name and whether or not data is shared with Google.
 }
+\examples{
+\dontrun{
+
+account_id <- 12345678
+new_account <- gtm_accounts_update(account_id, name = "New Container Name")
+
+}
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/update}
 

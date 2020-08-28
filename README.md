@@ -1,4 +1,7 @@
 # googleTagManageR
+
+[![CodeFactor](https://www.codefactor.io/repository/github/jamescottrill/googletagmanager/badge)](https://www.codefactor.io/repository/github/jamescottrill/googletagmanager)
+
 An R Package to manage Google Tag Manger via the API
 
 ## Overview

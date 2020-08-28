@@ -26,14 +26,92 @@ gtm_variables_update(
 \description{
 This takes a variable resource and overwrites the existing variable in GTM
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 3
+
+
+updatedVariable <- list(
+name = 'Lookup Table',
+type = 'smm',
+parameter = list(
+  list(
+        type = 'boolean',
+        key = 'setDefaultValue',
+        value = false
+    ),
+    list(
+        type = 'template',
+        key = 'input',
+        value = '{{Page Hostname}}'
+    ),
+    list(
+        type = 'list',
+        key = 'map',
+        list = list(
+            list(
+            type = 'map'
+            map = list(list(
+                type = 'template',
+                key = 'key',
+                value = 'google.co.uk',
+            ),
+            list(
+                type = 'template',
+                key = 'value',
+                value = 'UA-123456-1',
+            )
+       )
+    ),
+    list(
+            type = 'map'
+            map = list(list(
+                type = 'template',
+                key = 'key',
+                value = 'bing.com',
+            ),
+            list(
+                type = 'template',
+                key = 'value',
+                value = 'UA-123456-2',
+            )
+       )
+    ),
+    list(
+            type = 'map'
+            map = list(list(
+                type = 'template',
+                key = 'key',
+                value = 'yahoo.com',
+            ),
+            list(
+                type = 'template',
+                key = 'value',
+                value = 'UA-123456-3',
+            )
+       )
+    )
+    )
+   )
+  )
+ )
+
+newLookupTable <- gtm_variables_create(accountId, containerId, workspaceId, updatedVariable)
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/update}
 
-Other variable structure functions: 
+Other variable functions: 
 \code{\link{gtm_variables_create}()},
 \code{\link{gtm_variables_delete}()},
 \code{\link{gtm_variables_get}()},
 \code{\link{gtm_variables_list}()},
 \code{\link{gtm_variables_revert}()}
 }
-\concept{variable structure functions}
+\concept{variable functions}

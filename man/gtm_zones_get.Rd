@@ -19,14 +19,26 @@ gtm_zones_get(account_id, container_id, workspace_id, zone_id)
 This will return a list with the settings of a single zone.
 If you want to get the information for all zones, use \code{gtm_zones_list}
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 11
+zoneId <- 12
+
+zone <- gtm_zones_get(accountId, containerId, workspaceId, zoneId)
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/get}
 
-Other zone structure functions: 
+Other zone functions: 
 \code{\link{gtm_zones_create}()},
 \code{\link{gtm_zones_delete}()},
 \code{\link{gtm_zones_list}()},
 \code{\link{gtm_zones_revert}()},
 \code{\link{gtm_zones_update}()}
 }
-\concept{zone structure functions}
+\concept{zone functions}

@@ -10,6 +10,14 @@
 #' This returns a dataframe containing all the containers in an account
 #' If you want to get the information for a single container, use \code{gtm_containers_get}
 #' 
+#' @examples 
+#' \dontrun{
+#' 
+#' accounts <- gtm_accounts_list()
+#' containers <- gtm_containers_list(accounts$accountId[1])
+#'
+#' }
+#' 
 #' @export
 gtm_containers_list <- function(account_id) {
   
@@ -35,7 +43,16 @@ gtm_containers_list <- function(account_id) {
 #' This returns a list containing all the metadata about a single container.
 #' If you want to get the information for all containers, use \code{gtm_containers_list}
 #' 
-#'  @export
+#' @examples 
+#' \dontrun{
+#' 
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' container <- gtm_containers_get(accountId, containerId)
+#'
+#' }
+#' 
+#' @export
 gtm_containers_get <- function(account_id, container_id) {
   
   path_args <- list(
@@ -62,7 +79,16 @@ gtm_containers_get <- function(account_id, container_id) {
 #'
 #' This creates a new container in the specified account.
 #' 
-#'  @export
+#' @examples 
+#' \dontrun{
+#' accountId <- 1234567
+#' newName <- "My New Container"
+#' 
+#' container <- gtm_containers_create(accountId, newName, 'web')
+#'
+#' }
+#' 
+#' @export
 gtm_containers_create <- function(account_id, 
                                   name, 
                                   type = c('web', 'iosSdk5', 'androidSdk5', 'amp'), 
@@ -114,7 +140,16 @@ gtm_containers_create <- function(account_id,
 #' This updates a GTM Container.
 #' Although you can't change the type of container, it is still required for this function to work.
 #' 
-#'  @export
+#' @examples 
+#' \dontrun{
+#' 
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' containers <- gtm_containers_update(accountId, containerId, 'New Container Name', 'amp')
+#'
+#' }
+#' 
+#' @export
 gtm_containers_update <-function(account_id,
                                  container_id,
                                  name,
@@ -122,7 +157,7 @@ gtm_containers_update <-function(account_id,
                                  domain_name = "",
                                  notes = "") {
     if (missing(type)) {
-      stop("Container type is required to update the container. You can't change the container type, but you need to include it anyway so go figure...")
+      stop("Container type is required to update the container. You can't change the container type, but you need to include it anyway.")
     }
   
     if (any(missing(account_id),
@@ -164,7 +199,40 @@ gtm_containers_update <-function(account_id,
 #'
 #' This deletes a GTM container from an account. This is an irreversible process, so it's recommended that you first back up the container.
 #' 
-#'  @export
+#' @examples 
+#' \dontrun{
+#' 
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' gtm_conainers_delete(accountId, containerId, "TRUE")
+#' 
+#' 
+#' containerId <- 7654567
+#' 
+#' gtm_containers_delete(accountId, containerId)
+#' 
+#' # !!WARNING!! This command will delete your container.
+#' # This operation is irrevocable.
+#' # It is strongly recommended that you create an export of your container before you delete it, just in case you ever want it again.
+#' # Are you sure you want to continue?
+#' 
+#' #  1: Yes
+#' #  2: No
+#' 
+#' # Selection: 1
+#' 
+#' # Are You really sure you want to delete this container?
+#' 
+#' #  1: Yes
+#' #  2: No
+#'
+#' # Selection: 1
+#' 
+#' # Container 7654567 has been deleted.
+#' 
+#' }
+#' 
+#' @export
 gtm_containers_delete <- function(account_id, container_id, force = c("TRUE","FALSE")) {
     
   if (any(missing(account_id),

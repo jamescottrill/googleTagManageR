@@ -14,13 +14,25 @@ gtm_versions_get(account_id, container_id, version_id)
 \item{version_id}{Version Id}
 }
 \description{
-This returns a single
+This returns a single workspace version
+}
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+versionId <- 6
+
+version <- gtm_versions_get(accountId, containerId, versionId)
+
+}
+
 }
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/get}
 
-Other version structure functions: 
+Other version functions: 
 \code{\link{gtm_versions_delete}()},
 \code{\link{gtm_versions_update}()}
 }
-\concept{version structure functions}
+\concept{version functions}

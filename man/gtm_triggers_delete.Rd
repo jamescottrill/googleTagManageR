@@ -26,14 +26,42 @@ gtm_triggers_delete(
 \description{
 This deletes a trigger in a GTM workspace
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 5
+triggerId <- 13
+
+gtm_triggers_delete(accountId, containerId, workspaceId, triggerId)
+
+# This will delete trigger \%s. Are you sure you want to continue?
+
+#  1: Yes
+#  2: No
+
+# Selection: 1
+
+# trigger 13 has been deleted.
+
+triggerId = 14
+
+gtm_triggers_delete(accountId, containerId, workspaceId, triggerId, "TRUE")
+
+# Trigger 14 has been deleted.
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/delete}
 
-Other trigger structure functions: 
+Other trigger functions: 
 \code{\link{gtm_triggers_create}()},
 \code{\link{gtm_triggers_get}()},
 \code{\link{gtm_triggers_list}()},
 \code{\link{gtm_triggers_revert}()},
 \code{\link{gtm_triggers_update}()}
 }
-\concept{trigger structure functions}
+\concept{trigger functions}

@@ -18,14 +18,28 @@ gtm_triggers_revert(account_id, container_id, workspace_id, trigger_id)
 \description{
 This reverts a trigger back to its original, unmodified state.
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 10
+triggerId <- 20
+
+trugger <- gtm_triggers_revert(accountId, containerId, workspaceId, triggerId)
+
+# Changes to trigger 20 have been reverted
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/revert}
 
-Other trigger structure functions: 
+Other trigger functions: 
 \code{\link{gtm_triggers_create}()},
 \code{\link{gtm_triggers_delete}()},
 \code{\link{gtm_triggers_get}()},
 \code{\link{gtm_triggers_list}()},
 \code{\link{gtm_triggers_update}()}
 }
-\concept{trigger structure functions}
+\concept{trigger functions}

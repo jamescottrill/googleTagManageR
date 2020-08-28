@@ -11,6 +11,17 @@
 #' @param container_id Container Id
 #' @param workspace_id Workspace Id
 #' 
+#' @examples 
+#' \dontrun{
+#' 
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 10
+#' 
+#' builtinVaribles<- gtm_builtin_list(accountId, containerId, workspaceId)
+#' 
+#' }
+#' 
 #' @export
 gtm_builtin_list <- function(account_id, container_id, workspace_id) {
   
@@ -39,12 +50,29 @@ gtm_builtin_list <- function(account_id, container_id, workspace_id) {
 #' 
 #' @description
 #'
-#' This enables one of the built-in variables in GTM
+#' This enables one of the built-in variables in GTM.  It is the inverse of \code{\link{gtm_builtin_delete}}
 #' 
 #' @param account_id Account Id
 #' @param container_id Container Id
 #' @param workspace_id Workspace Id
 #' @param variable A Builtin Variable or list of built in variables. Valid values are here \code{\link{variables_list}}
+#' 
+#' @examples 
+#' \dontrun{
+#' 
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 10
+#' variable <- 'clickId'
+#' 
+#' builtinVaribles<- gtm_builtin_create(accountId, containerId, workspaceId, variable)
+#' 
+#' listOfVaribales <- c('clickClasses', 'clickElement')
+#' 
+#' newEnabledVars <- gtm_builtin_create(accountId, containerId, workspaceId, listOfVaribales)
+#' 
+#' }
+#' 
 #' 
 #' @export
 gtm_builtin_create <- function(account_id, container_id, workspace_id, variable){
@@ -84,12 +112,28 @@ gtm_builtin_create <- function(account_id, container_id, workspace_id, variable)
 #' 
 #' @description
 #'
-#' This disables one or more of the built-in variables in GTM
+#' This disables one or more of the built-in variables in GTM. It is the inverse of \code{\link{gtm_builtin_create}}
 #' 
 #' @param account_id Account Id
 #' @param container_id Container Id
 #' @param workspace_id Workspace Id
 #' @param variable A built-in Variable or list of built-in variables. Valid values are here \code{\link{variables_list}}
+#' 
+#' @examples 
+#' \dontrun{
+#' 
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 10
+#' variable <- 'clickId'
+#' 
+#' builtinVaribles<- gtm_builtin_delete(accountId, containerId, workspaceId, variable)
+#' 
+#' listOfVaribales <- c('clickClasses', 'clickElement')
+#' 
+#' newEnabledVars <- gtm_builtin_delete(accountId, containerId, workspaceId, listOfVaribales)
+#' 
+#' }
 #' 
 #' @export
 gtm_builtin_delete <- function(account_id, container_id, workspace_id, variable) {
@@ -119,7 +163,7 @@ gtm_builtin_delete <- function(account_id, container_id, workspace_id, variable)
   
   res <- gtm_delete(path_args = path_args, pars_args = pars_args)
   myMessage(sprintf("The Variable '%s' has been disabled in workspace %s", res$name, res$workspaceId), level=3)
-  return()
+  invisible(res)
 }
 
 
@@ -130,12 +174,24 @@ gtm_builtin_delete <- function(account_id, container_id, workspace_id, variable)
 #' 
 #' @description
 #'
-#' This reeverts any changes to a GTM Built-In Variables in a GTM Workspace
+#' This reeverts any changes to a GTM Built-In Variables in a GTM Workspace.
 #' 
 #' @param account_id Account Id
 #' @param container_id Container Id
 #' @param workspace_id Workspace Id
 #' @param variable A built-in Variable or list of built-in variables. Valid values are here \code{\link{variables_list}}
+#' 
+#' @examples
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 10
+#' variable <- 'clickId'
+#' 
+#' variable <- gtm_variables_revert(accountId, containerId, workspaceId, variable)
+#' 
+#' # Changes to variable 22 have been reverted
+#' }
 #' 
 #' @export
 gtm_builtin_revert <- function(account_id,container_id,workspace_id,variable) {

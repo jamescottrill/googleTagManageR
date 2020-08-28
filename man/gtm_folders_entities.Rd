@@ -18,6 +18,19 @@ gtm_folders_entities(account_id, container_id, workspace_id, folder_id)
 \description{
 This lists all entities in a GTM Folder.
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 3
+folderId <- 1
+
+folder <- gtm_folders_entities(accountId, containerId, workspaceId, folderId)
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/entities}
 

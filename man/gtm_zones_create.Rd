@@ -21,11 +21,11 @@ This takes a zone resource and creates a new zone in GTM.
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/create}
 
-Other zone structure functions: 
+Other zone functions: 
 \code{\link{gtm_zones_delete}()},
 \code{\link{gtm_zones_get}()},
 \code{\link{gtm_zones_list}()},
 \code{\link{gtm_zones_revert}()},
 \code{\link{gtm_zones_update}()}
 }
-\concept{zone structure functions}
+\concept{zone functions}

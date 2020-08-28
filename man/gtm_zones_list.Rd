@@ -17,14 +17,25 @@ gtm_zones_list(account_id, container_id, workspace_id)
 This will return a data frame all your available zones in a given workspace
 If you want to get the information for a single zone, use \code{gtm_zones_get}
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 11
+
+zones <- gtm_zones_list(accountId, containerId, workspaceId)
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/list}
 
-Other zone structure functions: 
+Other zone functions: 
 \code{\link{gtm_zones_create}()},
 \code{\link{gtm_zones_delete}()},
 \code{\link{gtm_zones_get}()},
 \code{\link{gtm_zones_revert}()},
 \code{\link{gtm_zones_update}()}
 }
-\concept{zone structure functions}
+\concept{zone functions}

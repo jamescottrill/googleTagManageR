@@ -18,14 +18,44 @@ gtm_tags_create(account_id, container_id, workspace_id, tag_object)
 \description{
 This takes a tag resource and creates a new tag in GTM.
 }
+\examples{
+\dontrun{
+
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 5
+#In the Tag Object below you will need to substitute your own trigger Id - see \code{gtm_triggers_list} and \code{gtm_triggers_create}
+tag <- list(
+  name = "Example DataLayer Push",
+  type = "html",
+  tagFiringOption = "oncePerEvent",
+  parameter = list(
+    list(
+      type = "template",
+      key = "html",
+      value = "<script>\n   window.dataLayer=window.dataLayer||[];\n   window.dataLayer.push({\"event\": \"demoEvent\"});\n</script>"
+    ),
+    list(
+      type = "boolean",
+      key = "supportDocumentWrite",
+      value = "false"
+    )
+  ),
+  firingTriggerId = 20,
+  tagFiringOption = "oncePerPage"
+)
+
+newTag <- gtm_tags_create(accountId, containerId, workspaceId, tag)
+}
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/create}
 
-Other tag structure functions: 
+Other tag functions: 
 \code{\link{gtm_tags_delete}()},
 \code{\link{gtm_tags_get}()},
 \code{\link{gtm_tags_list}()},
 \code{\link{gtm_tags_revert}()},
 \code{\link{gtm_tags_update}()}
 }
-\concept{tag structure functions}
+\concept{tag functions}

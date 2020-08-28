@@ -30,9 +30,17 @@ gtm_environments_update(
 \item{url}{Default preview page url for the environment.}
 }
 \description{
-This deletes a GTM environment
+This updates a GTM environment
+}
+\examples{
+\dontrun{
 
- @export
+accountId <- 1234567
+containerId <- 7654321
+
+gtm_environments_update(accountId, containerId, "Pre-Prod", url="https://new-pp.example.com")
+}
+
 }
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/environments/update}

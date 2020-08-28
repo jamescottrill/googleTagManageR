@@ -26,14 +26,27 @@ gtm_zones_delete(
 \description{
 This deletes a zone in a GTM workspace
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 11
+zoneId <- 3
+
+gtm_zones_delete(accountId, containerId, workspaceId, zoneId, "TRUE")
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/delete}
 
-Other zone structure functions: 
+Other zone functions: 
 \code{\link{gtm_zones_create}()},
 \code{\link{gtm_zones_get}()},
 \code{\link{gtm_zones_list}()},
 \code{\link{gtm_zones_revert}()},
 \code{\link{gtm_zones_update}()}
 }
-\concept{zone structure functions}
+\concept{zone functions}

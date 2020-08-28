@@ -17,14 +17,26 @@ gtm_triggers_list(account_id, container_id, workspace_id)
 This will return a data frame all your available triggers in a given workspace
 If you want to get the information for a single trigger, use \code{gtm_triggers_get}
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 3
+
+triggers <- gtm_triggers_list(accountId, containerId, workspaceId)
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/list}
 
-Other trigger structure functions: 
+Other trigger functions: 
 \code{\link{gtm_triggers_create}()},
 \code{\link{gtm_triggers_delete}()},
 \code{\link{gtm_triggers_get}()},
 \code{\link{gtm_triggers_revert}()},
 \code{\link{gtm_triggers_update}()}
 }
-\concept{trigger structure functions}
+\concept{trigger functions}

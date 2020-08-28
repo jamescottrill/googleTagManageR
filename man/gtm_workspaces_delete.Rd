@@ -23,12 +23,38 @@ gtm_workspaces_delete(
 \description{
 This irrevocably deletes a workspace and any work in it.
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 84
+
+gtm_workspaces_delete(accountId, containerId, workspaceId)
+
+# This will delete Workspace \%s. Are you sure you want to continue?
+
+#  1: Yes
+#  2: No
+
+# Selection: 1
+
+# Workspace 84 has been deleted.
+
+workspaceId = 85
+
+gtm_workspaces_delete(accountId, containerId, workspaceId, "TRUE")
+
+# Workspace 85 has been deleted.
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/delete}
 
 Other workspace functions: 
 \code{\link{gtm_workspaces_create}()},
-\code{\link{gtm_workspaces_export}()},
 \code{\link{gtm_workspaces_get}()},
 \code{\link{gtm_workspaces_list}()},
 \code{\link{gtm_workspaces_preview}()},

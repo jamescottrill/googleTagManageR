@@ -26,14 +26,50 @@ gtm_triggers_update(
 \description{
 This takes a trigger resource and overwrites the existing trigger in GTM
 }
+\examples{
+
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 3
+triggerId <- 8
+
+
+updatedTrigger <- list(
+name = 'More Complex Trigger - Updated',
+type = 'pageview',
+filter = list(
+  list(
+    type = 'contains',
+    parameter = list(
+     list(
+       type='template',
+       key = 'arg0',
+       value='{{Lookup Table}}'
+     ),
+     list(
+       type='template',
+       key = 'arg1',
+       value='New Lookup Value'
+     )
+    )
+   )
+  )
+ )
+
+newTrigger2 <- gtm_triggers_update(accountId, containerId, workspaceId, triggerId, updatedTrigger)
+
+}
+
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/update}
 
-Other trigger structure functions: 
+Other trigger functions: 
 \code{\link{gtm_triggers_create}()},
 \code{\link{gtm_triggers_delete}()},
 \code{\link{gtm_triggers_get}()},
 \code{\link{gtm_triggers_list}()},
 \code{\link{gtm_triggers_revert}()}
 }
-\concept{trigger structure functions}
+\concept{trigger functions}
