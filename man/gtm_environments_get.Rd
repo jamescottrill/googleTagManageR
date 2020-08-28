@@ -15,9 +15,9 @@ gtm_environments_get(account_id, container_id, environment_id)
 }
 \description{
 This gets the metadata for a single GTM Environment
-
- @examples 
- \dontrun{ 
+}
+\examples{
+\dontrun{ 
 accountId <- 1234567
 containerId <- 7654321
 environmentId <- 3

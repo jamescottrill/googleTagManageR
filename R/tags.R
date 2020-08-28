@@ -110,7 +110,8 @@ gtm_tags_get <- function(account_id,container_id,workspace_id,tag_id) {
 #' accountId <- 1234567
 #' containerId <- 7654321
 #' workspaceId <- 5
-#' #In the Tag Object below you will need to substitute your own trigger Id - see \code{gtm_triggers_list} and \code{gtm_triggers_create}
+#' # In the Tag Object below you will need to substitute your own trigger Id - 
+#' # see \code{gtm_triggers_list} and \code{gtm_triggers_create}
 #' tag <- list(
 #'   name = "Example DataLayer Push",
 #'   type = "html",
@@ -119,7 +120,10 @@ gtm_tags_get <- function(account_id,container_id,workspace_id,tag_id) {
 #'     list(
 #'       type = "template",
 #'       key = "html",
-#'       value = "<script>\n   window.dataLayer=window.dataLayer||[];\n   window.dataLayer.push({\"event\": \"demoEvent\"});\n</script>"
+#'       value = "<script>\n   
+#'                window.dataLayer=window.dataLayer||[];\n   
+#'                window.dataLayer.push({\"event\": \"demoEvent\"});\n
+#'                </script>"
 #'     ),
 #'     list(
 #'       type = "boolean",
@@ -190,7 +194,9 @@ gtm_tags_create <- function(account_id,container_id,workspace_id,tag_object) {
 #'     list(
 #'       type = "template",
 #'       key = "html",
-#'       value = "<script>\n   window.dataLayer=window.dataLayer||[];\n   window.dataLayer.push({\"event\": \"demoEvent\"});\n</script>"
+#'       value = "<script>\n   window.dataLayer=window.dataLayer||[];\n   
+#'                window.dataLayer.push({\"event\": \"demoEvent\"});\n
+#'                </script>"
 #'     ),
 #'     list(
 #'       type = "boolean",

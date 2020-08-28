@@ -522,9 +522,9 @@ gtm_workspaces_sync <- function(account_id,container_id,workspace_id) {
 #' 
 #' \dontrun{
 #' 
-#'  # Comlpexities arise converting the list created in R into the correct JSON for GTM, specifically for the 
-#'  # Monitoring Metadata in Tags, so this is brought out, converted separately and then included in the tag 
-#'  # before it is resolved.
+#'  # Comlpexities arise converting the list created in R into the correct JSON for GTM, 
+#'  # specifically for the Monitoring Metadata in Tags, so this is brought out, converted 
+#'  # separately and then included in the tag before it is resolved.
 #' 
 #' accountId <- 1234567
 #' containerId <- 7654321
@@ -542,33 +542,50 @@ gtm_workspaces_sync <- function(account_id,container_id,workspace_id) {
 #'        tag <- obj$tag
 #'        if(is.null(tag$monitoringMetadata$map)){
 #'        tag <- tag %>% select(-monitoringMetadata)
-#'        tag <- as.list(tag) %>% lapply(function(x){if(is.null(x[[1]])){x<-NA}else{x<-x}}) %>% lapply(function(x) x[!is.na(x)])
+#'        tag <- as.list(tag) %>% 
+#'              lapply(function(x){if(is.null(x[[1]])){x<-NA}else{x<-x}}) %>% 
+#'              lapply(function(x) x[!is.na(x)])
 #'        } else{
 #'        metadataMap <- tag$monitoringMetadata$map[[1]]
 #'        metadata <- list(
 #'            type = 'map',
 #'            map = metadataMap
 #'        )
-#'        tag <- as.list(tag) %>% lapply(function(x){if(is.null(x[[1]])){x<-NA}else{x<-x}}) %>% lapply(function(x) x[!is.na(x)])
+#'        tag <- as.list(tag) %>% 
+#'               lapply(function(x){if(is.null(x[[1]])){x<-NA}else{x<-x}}) %>% 
+#'               lapply(function(x) x[!is.na(x)])
 #'        tag$monitoringMetadata <- metadata
 #'        }
 #'        
 #'     }
 #'     if(!is.na(obj$trigger$path)){
 #'        trigger <- obj$trigger
-#'        trigger<-as.list(trigger) %>% lapply(function(x){if(is.null(x[[1]])){x<-NA}else{x<-x}}) %>% lapply(function(x) x[!is.na(x)])
+#'        trigger <- as.list(trigger) %>% 
+#'                   lapply(function(x){if(is.null(x[[1]])){x<-NA}else{x<-x}}) %>% 
+#'                   lapply(function(x) x[!is.na(x)])
 #'     }
 #'     if(!is.na(obj$variable$path)){
 #'        variable <- obj$variable
-#'        variable<-as.list(variable) %>% lapply(function(x){if(is.null(x[[1]])){x<-NA}else{x<-x}}) %>% lapply(function(x) x[!is.na(x)])
+#'        variable <- as.list(variable) %>% 
+#'                    lapply(function(x){if(is.null(x[[1]])){x<-NA}else{x<-x}}) %>% 
+#'                    lapply(function(x) x[!is.na(x)])
 #'     }
 #'     if(!is.na(obj$folder$path)){
 #'        folder <- obj$folder
-#'        folder<-as.list(folder) %>% lapply(function(x){if(is.null(x[[1]])){x<-NA}else{x<-x}}) %>% lapply(function(x) x[!is.na(x)])
+#'        folder <- as.list(folder) %>% 
+#'                  lapply(function(x){if(is.null(x[[1]])){x<-NA}else{x<-x}}) %>% 
+#'                  lapply(function(x) x[!is.na(x)])
 #'     }
 #'     changeStatus <- obj$changeStatus
 #'     
-#'     resolve <- gtm_workspaces_resolve(accountId, containerId, workspaceId, tag, trigger, variable, folder, changeStatus)
+#'     resolve <- gtm_workspaces_resolve(account_id = accountId, 
+#'                                      container_id = containerId, 
+#'                                      workspace_id = workspaceId, 
+#'                                      tag = tag, 
+#'                                      trigger = trigger,
+#'                                      variable = variable, 
+#'                                      folder = folder, 
+#'                                      changeStatus = changeStatus)
 #'   }
 #' }
 #' 

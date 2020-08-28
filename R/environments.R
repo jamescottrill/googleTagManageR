@@ -50,8 +50,8 @@ gtm_environments_list <- function(account_id,container_id) {
 #'
 #' This gets the metadata for a single GTM Environment
 #' 
-#'  @examples 
-#'  \dontrun{ 
+#' @examples 
+#' \dontrun{ 
 #' accountId <- 1234567
 #' containerId <- 7654321
 #' environmentId <- 3
@@ -102,7 +102,11 @@ gtm_environments_get <- function(account_id,container_id,environment_id){
 #' 
 #' env <- gtm_environments_create(accountId, containerId, "Development")
 #' 
-#' pp_env <- gtm_environments_create(accountId, containerId, "Pre-Prod", debug=TRUE, url="https://pp.example.com")
+#' pp_env <- gtm_environments_create(accountId, 
+#'                                   containerId, 
+#'                                   "Pre-Prod", 
+#'                                   debug=TRUE, 
+#'                                   url="https://pp.example.com")
 #' }
 #' 
 #' @export

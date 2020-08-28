@@ -36,7 +36,9 @@ tag <- list(
     list(
       type = "template",
       key = "html",
-      value = "<script>\n   window.dataLayer=window.dataLayer||[];\n   window.dataLayer.push({\"event\": \"demoEvent\"});\n</script>"
+      value = "<script>\n   window.dataLayer=window.dataLayer||[];\n   
+               window.dataLayer.push({\"event\": \"demoEvent\"});\n
+               </script>"
     ),
     list(
       type = "boolean",

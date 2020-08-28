@@ -30,7 +30,8 @@ gtm_containers_delete(accountId, containerId)
 
 # !!WARNING!! This command will delete your container.
 # This operation is irrevocable.
-# It is strongly recommended that you create an export of your container before you delete it, just in case you ever want it again.
+# It is strongly recommended that you create an export of your container 
+# before you delete it, just in case you ever want it again.
 # Are you sure you want to continue?
 
 #  1: Yes

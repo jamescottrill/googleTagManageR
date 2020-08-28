@@ -213,7 +213,8 @@ gtm_containers_update <-function(account_id,
 #' 
 #' # !!WARNING!! This command will delete your container.
 #' # This operation is irrevocable.
-#' # It is strongly recommended that you create an export of your container before you delete it, just in case you ever want it again.
+#' # It is strongly recommended that you create an export of your container 
+#' # before you delete it, just in case you ever want it again.
 #' # Are you sure you want to continue?
 #' 
 #' #  1: Yes
@@ -261,7 +262,8 @@ gtm_containers_delete <- function(account_id, container_id, force = c("TRUE","FA
           menu(c("Yes", "No"),
                title = paste0("!!WARNING!! This command will delete your container.\n",
                               "This operation is irrevocable.\n",
-                              "It is strongly recommended that you create an export of your container before you delete it, just in case you ever want it again.\n",
+                              "It is strongly recommended that you create an export of your container ", 
+                              "before you delete it, just in case you ever want it again.\n",
                               "Are you sure you want to continue?")), {
                  switch(menu(c("Yes", "No"), title = "Are You really sure you want to delete this container?"), {
                    res <- gtm_delete(path_args = path_args)
