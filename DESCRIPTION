@@ -6,7 +6,7 @@ Authors@R: c(person("James", "Cottrill",email="james@jamescottrill.co.uk", role=
              person("Mark","Edmondson", email = "m@sunholo.com", role="ctb"),
              person("Manos","Parzakonis", email = "parzakonis.m@gmail.com", role="ctb")
             )
-Description: This package allows programmatic access to the 'Google Tag Manager' API, enabling scripted deployments and updates across multiple tags, triggers, variables and containers. 
+Description: Interact with the 'Google Tag Manager' API <https://developers.google.com/tag-manager/api/v2>, enabling scripted deployments and updates across multiple tags, triggers, variables and containers. 
 Depends:
     R (>= 3.5.0)
 Imports:
