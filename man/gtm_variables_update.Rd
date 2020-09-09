@@ -41,7 +41,7 @@ parameter = list(
   list(
         type = 'boolean',
         key = 'setDefaultValue',
-        value = false
+        value = 'false'
     ),
     list(
         type = 'template',
@@ -53,44 +53,44 @@ parameter = list(
         key = 'map',
         list = list(
             list(
-            type = 'map'
+            type = 'map',
             map = list(list(
                 type = 'template',
                 key = 'key',
-                value = 'google.co.uk',
+                value = 'google.co.uk'
             ),
             list(
                 type = 'template',
                 key = 'value',
-                value = 'UA-123456-1',
+                value = 'UA-123456-1'
             )
        )
     ),
     list(
-            type = 'map'
+            type = 'map',
             map = list(list(
                 type = 'template',
                 key = 'key',
-                value = 'bing.com',
+                value = 'bing.com'
             ),
             list(
                 type = 'template',
                 key = 'value',
-                value = 'UA-123456-2',
+                value = 'UA-123456-2'
             )
        )
     ),
     list(
-            type = 'map'
+            type = 'map',
             map = list(list(
                 type = 'template',
                 key = 'key',
-                value = 'yahoo.com',
+                value = 'yahoo.com'
             ),
             list(
                 type = 'template',
                 key = 'value',
-                value = 'UA-123456-3',
+                value = 'UA-123456-3'
             )
        )
     )

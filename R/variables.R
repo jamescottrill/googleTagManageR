@@ -135,7 +135,7 @@ gtm_variables_get <- function(account_id,container_id,workspace_id,variable_id) 
 #'   list(
 #'         type = 'boolean',
 #'         key = 'setDefaultValue',
-#'         value = false
+#'         value = 'false'
 #'     ),
 #'     list(
 #'         type = 'template',
@@ -147,30 +147,30 @@ gtm_variables_get <- function(account_id,container_id,workspace_id,variable_id) 
 #'         key = 'map',
 #'         list = list(
 #'             list(
-#'             type = 'map'
+#'             type = 'map',
 #'             map = list(list(
 #'                 type = 'template',
 #'                 key = 'key',
-#'                 value = 'google.co.uk',
+#'                 value = 'google.co.uk'
 #'             ),
 #'             list(
 #'                 type = 'template',
 #'                 key = 'value',
-#'                 value = 'UA-123456-1',
+#'                 value = 'UA-123456-1'
 #'             )
 #'        )
 #'     ),
 #'     list(
-#'             type = 'map'
+#'             type = 'map',
 #'             map = list(list(
 #'                 type = 'template',
 #'                 key = 'key',
-#'                 value = 'bing.com',
+#'                 value = 'bing.com'
 #'             ),
 #'             list(
 #'                 type = 'template',
 #'                 key = 'value',
-#'                 value = 'UA-123456-2',
+#'                 value = 'UA-123456-2'
 #'             )
 #'        )
 #'     )
@@ -236,7 +236,7 @@ gtm_variables_create <- function(account_id, container_id, workspace_id, variabl
 #'   list(
 #'         type = 'boolean',
 #'         key = 'setDefaultValue',
-#'         value = false
+#'         value = 'false'
 #'     ),
 #'     list(
 #'         type = 'template',
@@ -248,44 +248,44 @@ gtm_variables_create <- function(account_id, container_id, workspace_id, variabl
 #'         key = 'map',
 #'         list = list(
 #'             list(
-#'             type = 'map'
+#'             type = 'map',
 #'             map = list(list(
 #'                 type = 'template',
 #'                 key = 'key',
-#'                 value = 'google.co.uk',
+#'                 value = 'google.co.uk'
 #'             ),
 #'             list(
 #'                 type = 'template',
 #'                 key = 'value',
-#'                 value = 'UA-123456-1',
+#'                 value = 'UA-123456-1'
 #'             )
 #'        )
 #'     ),
 #'     list(
-#'             type = 'map'
+#'             type = 'map',
 #'             map = list(list(
 #'                 type = 'template',
 #'                 key = 'key',
-#'                 value = 'bing.com',
+#'                 value = 'bing.com'
 #'             ),
 #'             list(
 #'                 type = 'template',
 #'                 key = 'value',
-#'                 value = 'UA-123456-2',
+#'                 value = 'UA-123456-2'
 #'             )
 #'        )
 #'     ),
 #'     list(
-#'             type = 'map'
+#'             type = 'map',
 #'             map = list(list(
 #'                 type = 'template',
 #'                 key = 'key',
-#'                 value = 'yahoo.com',
+#'                 value = 'yahoo.com'
 #'             ),
 #'             list(
 #'                 type = 'template',
 #'                 key = 'value',
-#'                 value = 'UA-123456-3',
+#'                 value = 'UA-123456-3'
 #'             )
 #'        )
 #'     )
