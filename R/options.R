@@ -1,5 +1,4 @@
 .onLoad <- function(libname, pkgname) {
-  
   op <- options()
   op.googleTagManageR <- list(
     ## default Google project
