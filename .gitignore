@@ -3,7 +3,6 @@
 .RData
 .Ruserdata
 .httr-oauth
-.Rbuildignore
 .Renviron
 *.json
 R/gtm_auth-private.R

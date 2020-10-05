@@ -1,0 +1,10 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.httr-oauth$
+^R/development.R$
+^R/gtm_auth-private.R$
+^.*.rds
+^.*\.json$
+^.Renviron
+^.Rhistory
+^.*.icloud
