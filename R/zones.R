@@ -105,6 +105,30 @@ gtm_zones_get <- function(account_id,container_id,workspace_id,zone_id) {
 #' @param workspace_id Workspace Id
 #' @param zone_object Zone Object
 #' 
+#' @examples 
+#' \dontrun{
+#' accountId <- 1234567
+#' containerId <- 7654321
+#' workspaceId <- 10
+#' 
+#' 
+#'  
+#' zone <- list(
+#'     accountId=accountId,
+#'     containerId=containerId,
+#'     workspaceId=workspaceId,
+#'     name="Marketing Zone",
+#'     childContainer=list(
+#'       list(
+#'         publicId="GTM-ABCDEF",
+#'         nickname="My Marketing Container"
+#'      )
+#'    )
+#' )
+#'  
+#' new_zone <- gtm_zones_create(accountId, containerId, workspaceId, zone)
+#'  
+#' }
 #' @export
 gtm_zones_create <- function(account_id,container_id,workspace_id,zone_object) {
   

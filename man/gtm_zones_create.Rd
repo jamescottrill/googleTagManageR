@@ -18,6 +18,31 @@ gtm_zones_create(account_id, container_id, workspace_id, zone_object)
 \description{
 This takes a zone resource and creates a new zone in GTM.
 }
+\examples{
+\dontrun{
+accountId <- 1234567
+containerId <- 7654321
+workspaceId <- 10
+
+
+ 
+zone <- list(
+    accountId=accountId,
+    containerId=containerId,
+    workspaceId=workspaceId,
+    name="Marketing Zone",
+    childContainer=list(
+      list(
+        publicId="GTM-ABCDEF",
+        nickname="My Marketing Container"
+     )
+   )
+)
+ 
+new_zone <- gtm_zones_create(accountId, containerId, workspaceId, zone)
+ 
+}
+}
 \seealso{
 \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/create}
 
