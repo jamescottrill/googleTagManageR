@@ -71,7 +71,7 @@ gtm_containers_get <- function(account_id, container_id) {
 #' 
 #' @param account_id Account Id
 #' @param name Container Name
-#' @param type Container Use Type
+#' @param type Container Use Type, one of web, iosSdk5, androidSdk5, amp or server
 #' @param domain_name List of domain names associated with the Container.
 #' @param notes Container Notes.
 #'
@@ -91,7 +91,7 @@ gtm_containers_get <- function(account_id, container_id) {
 #' @export
 gtm_containers_create <- function(account_id, 
                                   name, 
-                                  type = c('web', 'iosSdk5', 'androidSdk5', 'amp'), 
+                                  type = c("web", "iosSdk5", "androidSdk5", "amp", "server"), 
                                   domain_name = NULL, 
                                   notes = NULL) {
     if (any(missing(account_id),
@@ -131,7 +131,7 @@ gtm_containers_create <- function(account_id,
 #' @param account_id Account Id
 #' @param container_id Container Id
 #' @param name Container Name
-#' @param type Container Use Type
+#' @param type Container Use Type, one of web, iosSdk5, androidSdk5, amp or server
 #' @param domain_name List of domain names associated with the Container.
 #' @param notes Container Notes.
 #'
@@ -153,7 +153,7 @@ gtm_containers_create <- function(account_id,
 gtm_containers_update <-function(account_id,
                                  container_id,
                                  name,
-                                 type = c("amp", "androidSdk5", "iosSdk5", "web"),
+                                 type = c("amp", "androidSdk5", "iosSdk5", "web", "server"),
                                  domain_name = "",
                                  notes = "") {
     if (missing(type)) {

@@ -7,7 +7,7 @@
 gtm_containers_create(
   account_id,
   name,
-  type = c("web", "iosSdk5", "androidSdk5", "amp"),
+  type = c("web", "iosSdk5", "androidSdk5", "amp", "server"),
   domain_name = NULL,
   notes = NULL
 )
@@ -17,7 +17,7 @@ gtm_containers_create(
 
 \item{name}{Container Name}
 
-\item{type}{Container Use Type}
+\item{type}{Container Use Type, one of web, iosSdk5, androidSdk5, amp or server}
 
 \item{domain_name}{List of domain names associated with the Container.}
 

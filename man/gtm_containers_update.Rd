@@ -8,7 +8,7 @@ gtm_containers_update(
   account_id,
   container_id,
   name,
-  type = c("amp", "androidSdk5", "iosSdk5", "web"),
+  type = c("amp", "androidSdk5", "iosSdk5", "web", "server"),
   domain_name = "",
   notes = ""
 )
@@ -20,7 +20,7 @@ gtm_containers_update(
 
 \item{name}{Container Name}
 
-\item{type}{Container Use Type}
+\item{type}{Container Use Type, one of web, iosSdk5, androidSdk5, amp or server}
 
 \item{domain_name}{List of domain names associated with the Container.}
 
