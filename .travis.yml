@@ -1,0 +1,10 @@
+
+language: r
+cache: packages
+r_packages:
+- knitr
+- googleAuthR
+notifications:
+  email:
+    on_success: change
+    on_failure: change

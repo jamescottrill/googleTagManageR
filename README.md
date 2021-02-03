@@ -1,6 +1,6 @@
 # googleTagManageR
 
-[![CodeFactor](https://www.codefactor.io/repository/github/jamescottrill/googletagmanager/badge)](https://www.codefactor.io/repository/github/jamescottrill/googletagmanager)
+[![CodeFactor](https://www.codefactor.io/repository/github/jamescottrill/googletagmanager/badge)](https://www.codefactor.io/repository/github/jamescottrill/googletagmanager) [![Build Status](https://travis-ci.org/jamescottrill/googleTagManageR.svg?branch=master)](https://travis-ci.org/jamescottrill/googleTagManageR)
 
 An R Package to manage Google Tag Manger via the API
 
