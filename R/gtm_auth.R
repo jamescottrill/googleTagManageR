@@ -5,6 +5,7 @@
 #' 
 #' @param token An existing Google Auth Token
 #' @param email The email address for the Google Account
+#' @param sa_json A GCP Service Account Key in JSON format, either a string or file.
 #' 
 #' @description 
 #' This function authenticates the user with Google Tag Manager
@@ -28,16 +29,25 @@
 #'  
 #'  # Reauthentication - if you've already logged in
 #'  gtm_auth(email="me@mycompany.co.uk")
+#'  
+#'  # Service Account Login
+#'  gtm_auth(sa_json="my-service-account.json")
 #'  }
 #'  
 #' @return Invisibly, the token that has been saved to the session
 #' @export
-gtm_auth<-function(email = NULL, token = NULL){
+gtm_auth<-function(email = NULL, token = NULL, sa_json=NULL){
 
   default_project_message()
-  out<-googleAuthR::gar_auth(email = email,
+  if(!is.null(sa_json)){
+    email <- jsonlite::fromJSON(sa_json)$client_email
+    myMessage(sprintf("Authenticating Using Service Account %s", email), level=3)
+    out <- googleAuthR::gar_auth_service(sa_json)
+  } else {  
+    out<-googleAuthR::gar_auth(email = email,
                              token = token,
                              package = "googleTagManageR")
-  myMessage("Authenticated", level = 3)
+    myMessage("Authenticated", level = 3)
+}
   invisible(out)
 }
