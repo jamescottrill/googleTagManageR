@@ -10,6 +10,8 @@ gtm_auth(email = NULL, token = NULL, sa_json = NULL)
 \item{email}{The email address for the Google Account}
 
 \item{token}{An existing Google Auth Token}
+
+\item{sa_json}{A GCP Service Account Key in JSON format, either a string or file.}
 }
 \value{
 Invisibly, the token that has been saved to the session
@@ -35,6 +37,9 @@ R session or set
  
  # Reauthentication - if you've already logged in
  gtm_auth(email="me@mycompany.co.uk")
+ 
+ # Service Account Login
+ gtm_auth(sa_json="my-service-account.json")
  }
  
 }

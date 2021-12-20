@@ -5,6 +5,7 @@
 #' 
 #' @param token An existing Google Auth Token
 #' @param email The email address for the Google Account
+#' @param sa_json A GCP Service Account Key in JSON format, either a string or file.
 #' 
 #' @description 
 #' This function authenticates the user with Google Tag Manager
@@ -28,6 +29,9 @@
 #'  
 #'  # Reauthentication - if you've already logged in
 #'  gtm_auth(email="me@mycompany.co.uk")
+#'  
+#'  # Service Account Login
+#'  gtm_auth(sa_json="my-service-account.json")
 #'  }
 #'  
 #' @return Invisibly, the token that has been saved to the session
