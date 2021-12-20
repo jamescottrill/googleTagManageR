@@ -1,4 +1,3 @@
-
 language: r
 cache: packages
 r_packages:
@@ -8,3 +7,6 @@ notifications:
   email:
     on_success: change
     on_failure: change
+before_install:
+- openssl aes-256-cbc -K $encrypted_6c9f30024cb1_key -iv $encrypted_6c9f30024cb1_iv
+  -in ci-service-account.json.enc -out ci-service-account.json -d
