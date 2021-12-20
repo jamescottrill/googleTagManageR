@@ -4,7 +4,7 @@
 \alias{gtm_auth}
 \title{Auth for GTM Specific Properties}
 \usage{
-gtm_auth(email = NULL, token = NULL)
+gtm_auth(email = NULL, token = NULL, sa_json = NULL)
 }
 \arguments{
 \item{email}{The email address for the Google Account}

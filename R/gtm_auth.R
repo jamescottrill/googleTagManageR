@@ -32,12 +32,18 @@
 #'  
 #' @return Invisibly, the token that has been saved to the session
 #' @export
-gtm_auth<-function(email = NULL, token = NULL){
+gtm_auth<-function(email = NULL, token = NULL, sa_json=NULL){
 
   default_project_message()
-  out<-googleAuthR::gar_auth(email = email,
+  if(!is.null(sa_json)){
+    email <- jsonlite::fromJSON(sa_json)$client_email
+    myMessage(sprintf("Authenticating Using Service Account %s", email), level=3)
+    out <- googleAuthR::gar_auth_service(sa_json)
+  } else {  
+    out<-googleAuthR::gar_auth(email = email,
                              token = token,
                              package = "googleTagManageR")
-  myMessage("Authenticated", level = 3)
+    myMessage("Authenticated", level = 3)
+}
   invisible(out)
 }
