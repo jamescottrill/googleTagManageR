@@ -51,7 +51,7 @@ gtm_versions_delete(accountId, containerId, versionId, "TRUE")
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/delete}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/versions/delete}
 
 Other version functions: 
 \code{\link{gtm_versions_get}()},

@@ -59,9 +59,9 @@ newTrigger2 <- gtm_triggers_create(accountId, containerId, workspaceId, trigger2
 }
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/create}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/create}
 
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers#resource}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers#resource}
 
 Other trigger functions: 
 \code{\link{gtm_triggers_delete}()},

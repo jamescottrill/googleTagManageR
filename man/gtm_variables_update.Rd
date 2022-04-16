@@ -105,7 +105,7 @@ newLookupTable <- gtm_variables_create(accountId, containerId, workspaceId, upda
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/update}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/update}
 
 Other variable functions: 
 \code{\link{gtm_variables_create}()},

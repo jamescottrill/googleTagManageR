@@ -30,7 +30,7 @@ tags <- gtm_tags_list(accountId, containerId, workspaceId)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/list}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/list}
 
 Other tag functions: 
 \code{\link{gtm_tags_create}()},

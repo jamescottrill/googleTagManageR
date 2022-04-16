@@ -44,7 +44,7 @@ new_zone <- gtm_zones_create(accountId, containerId, workspaceId, zone)
 }
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/create}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/create}
 
 Other zone functions: 
 \code{\link{gtm_zones_delete}()},

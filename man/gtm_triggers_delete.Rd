@@ -55,7 +55,7 @@ gtm_triggers_delete(accountId, containerId, workspaceId, triggerId, "TRUE")
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/delete}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/delete}
 
 Other trigger functions: 
 \code{\link{gtm_triggers_create}()},

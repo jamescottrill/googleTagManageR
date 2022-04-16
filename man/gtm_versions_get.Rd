@@ -29,7 +29,7 @@ version <- gtm_versions_get(accountId, containerId, versionId)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/get}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/versions/get}
 
 Other version functions: 
 \code{\link{gtm_versions_delete}()},

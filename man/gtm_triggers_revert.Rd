@@ -33,7 +33,7 @@ trugger <- gtm_triggers_revert(accountId, containerId, workspaceId, triggerId)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/revert}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/revert}
 
 Other trigger functions: 
 \code{\link{gtm_triggers_create}()},

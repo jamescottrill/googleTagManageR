@@ -30,7 +30,7 @@ variables <- gtm_variables_list(accountId, containerId, workspaceId)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/list}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/list}
 
 Other variable functions: 
 \code{\link{gtm_variables_create}()},

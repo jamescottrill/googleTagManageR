@@ -1,6 +1,6 @@
 #' List all accounts a user has accesss to 
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/list}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/list}
 #' @family account functions
 #' 
 #' @description
@@ -26,7 +26,7 @@ gtm_accounts_list <- function() {
 
 #' List account metadata
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/get}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/get}
 #' @family account functions
 #' 
 #' @param account_id Account Id
@@ -55,7 +55,7 @@ gtm_accounts_get <- function(account_id) {
 
 #' Updates account metadata
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/update}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/update}
 #' @family account functions
 #' 
 #' @param account_id Account Id

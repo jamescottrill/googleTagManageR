@@ -36,7 +36,7 @@ newEnabledVars <- gtm_builtin_delete(accountId, containerId, workspaceId, listOf
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/built_in_variables/delete}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/built_in_variables/delete}
 
 Other built in variable functions: 
 \code{\link{gtm_builtin_create}()},

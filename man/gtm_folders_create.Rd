@@ -35,7 +35,7 @@ folder <- gtm_folders_create(accountId, containerId, workspaceId, folderName, fo
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/get}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/get}
 
 Other folder functions: 
 \code{\link{gtm_folders_delete}()},

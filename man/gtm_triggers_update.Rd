@@ -63,7 +63,7 @@ newTrigger2 <- gtm_triggers_update(accountId, containerId, workspaceId, triggerI
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/update}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/update}
 
 Other trigger functions: 
 \code{\link{gtm_triggers_create}()},

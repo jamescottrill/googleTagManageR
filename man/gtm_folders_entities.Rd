@@ -32,7 +32,7 @@ folder <- gtm_folders_entities(accountId, containerId, workspaceId, folderId)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/entities}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/entities}
 
 Other folder functions: 
 \code{\link{gtm_folders_create}()},

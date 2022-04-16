@@ -30,7 +30,7 @@ workspace <- gtm_workspaces_status(accountId, containerId, workspaceId)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/getStatus}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/getStatus}
 
 Other workspace functions: 
 \code{\link{gtm_workspaces_create}()},

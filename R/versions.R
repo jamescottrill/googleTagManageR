@@ -1,6 +1,6 @@
 #' List a single version in a workspace
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/get}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/versions/get}
 #' @family version functions
 #' 
 #' @description
@@ -48,7 +48,7 @@ gtm_versions_get <- function(account_id,container_id,version_id) {
 
 #' Update a container version
 #'
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/update}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/versions/update}
 #' @family version functions
 #' 
 #' @description
@@ -112,7 +112,7 @@ gtm_versions_update <- function(account_id,container_id,version_id, name = NULL,
 }
 #' Delete a container version
 #'
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/delete}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/versions/delete}
 #' @family version functions
 #' 
 #' @description
@@ -192,7 +192,7 @@ gtm_versions_delete <- function(account_id, container_id, version_id, force = c(
 
 #' Sets a container version as the latest version
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/set_latest}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/versions/set_latest}
 #' @family versions functions
 #' 
 #' @param account_id Account Id
@@ -236,7 +236,7 @@ gtm_versions_setlatest <- function(account_id,container_id,version_id) {
 
 #' Undeletes a container version
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/undelete}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/versions/undelete}
 #' @family versions functions
 #' 
 #' @param account_id Account Id
@@ -281,7 +281,7 @@ gtm_versions_undelete <- function(account_id, container_id, version_id) {
 
 #' Publish a new container version
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/publish}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/versions/publish}
 #' @family versions functions
 #' 
 #' @param account_id Account Id

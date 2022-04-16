@@ -40,7 +40,7 @@ version <- gtm_versions_update(accountId, containerId, versionId, newName, newDe
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/update}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/versions/update}
 
 Other version functions: 
 \code{\link{gtm_versions_delete}()},

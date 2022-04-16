@@ -1,6 +1,6 @@
 #' List all containers in an account
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/list}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/list}
 #' @family folder functions
 #' 
 #' @param account_id Account Id
@@ -45,7 +45,7 @@ gtm_folders_list <- function(account_id, container_id, workspace_id) {
 
 #' Gets a GTM Folder
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/get}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/get}
 #' @family folder functions
 #' 
 #' @param account_id Account Id
@@ -94,7 +94,7 @@ gtm_folders_get <- function(account_id,container_id,workspace_id,folder_id) {
 
 #' Creates a GTM Folder
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/get}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/get}
 #' @family folder functions
 #' 
 #' @param account_id Account Id
@@ -151,7 +151,7 @@ gtm_folders_create<-function(account_id, container_id, workspace_id, name, notes
 
 #' Updates a GTM Folder
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/update}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/update}
 #' @family folder functions
 #' 
 #' @param account_id Account Id
@@ -213,7 +213,7 @@ gtm_folders_update <- function(account_id, container_id, workspace_id, folder_id
 
 #' Deletes a GTM Folder
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/delete}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/delete}
 #' @family folder functions
 #' @importFrom utils menu
 #' 
@@ -281,7 +281,7 @@ gtm_folders_delete <-function(account_id, container_id, workspace_id, folder_id,
 
 #' Reverts a GTM Folder
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/revert}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/revert}
 #' @family folder functions
 #' 
 #' @param account_id Account Id
@@ -329,7 +329,7 @@ gtm_folders_revert <- function(account_id, container_id, workspace_id, folder_id
 
 #' List all entities in a GTM Folder.
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/entities}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/entities}
 #' @family folder functions
 #' 
 #' @param account_id Account Id
@@ -376,7 +376,7 @@ gtm_folders_entities<-function(account_id, container_id, workspace_id, folder_id
 
 #' Move entities to a new folder
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/move_entities_to_folder}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/move_entities_to_folder}
 #' @family folder functions
 #' 
 #' @param account_id Account Id

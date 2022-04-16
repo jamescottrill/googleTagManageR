@@ -1,6 +1,6 @@
 #' List all variables in a workspace
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/list}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/list}
 #' @family variable functions
 #' 
 #' @description
@@ -45,7 +45,7 @@ gtm_variables_list <- function(account_id,container_id,workspace_id) {
 
 #' List all variables in a workspace
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/get}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/get}
 #' @family variable functions
 #' 
 #' @description
@@ -94,8 +94,8 @@ gtm_variables_get <- function(account_id,container_id,workspace_id,variable_id) 
 
 #' Create a new variable
 #'
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/create}
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables#resource-representations}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/create}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/variables#resource-representations}
 #' @family variable functions
 #' 
 #' @description
@@ -208,7 +208,7 @@ gtm_variables_create <- function(account_id, container_id, workspace_id, variabl
 
 #' Update an existing variable
 #'
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/update}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/update}
 #' @family variable functions
 #' 
 #' @description
@@ -323,7 +323,7 @@ gtm_variables_update <- function(account_id,container_id,workspace_id,variable_i
 
 #' Delete a variable
 #'
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/delete}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/delete}
 #' @family variable functions
 #' @importFrom utils menu
 #' 
@@ -408,7 +408,7 @@ gtm_variables_delete <- function(account_id, container_id, workspace_id, variabl
 
 #' Reverts a variable to its original state
 #'
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/revert}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/revert}
 #' @family variable functions
 #' 
 #' @description

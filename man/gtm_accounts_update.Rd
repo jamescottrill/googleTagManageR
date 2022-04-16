@@ -25,7 +25,7 @@ new_account <- gtm_accounts_update(account_id, name = "New Container Name")
 }
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/update}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/update}
 
 Other account functions: 
 \code{\link{gtm_accounts_get}()},
