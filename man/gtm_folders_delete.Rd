@@ -39,7 +39,7 @@ gtm_folders_delete(accountId, containerId, workspaceId, force=TRUE)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/delete}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/delete}
 
 Other folder functions: 
 \code{\link{gtm_folders_create}()},

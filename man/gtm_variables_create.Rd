@@ -96,9 +96,9 @@ lookupTable <- gtm_variables_create(accountId, containerId, workspaceId, variabl
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/create}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/create}
 
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables#resource-representations}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/variables#resource-representations}
 
 Other variable functions: 
 \code{\link{gtm_variables_delete}()},

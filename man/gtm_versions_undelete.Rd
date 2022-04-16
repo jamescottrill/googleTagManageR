@@ -30,7 +30,7 @@ version <- gtm_versions_undelete(accountId, containerId, versionId)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/versions/undelete}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/versions/undelete}
 
 Other versions functions: 
 \code{\link{gtm_versions_publish}()},

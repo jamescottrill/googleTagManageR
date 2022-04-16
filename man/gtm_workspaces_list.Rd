@@ -27,7 +27,7 @@ workspaces <- gtm_workspaces_list(accountId, containerId)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/list}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/list}
 
 Other workspace functions: 
 \code{\link{gtm_workspaces_create}()},

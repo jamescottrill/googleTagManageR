@@ -53,7 +53,7 @@ gtm_folders_move(accountId, containerId, workspaceId, folderId, tags = tags)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/move_entities_to_folder}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/move_entities_to_folder}
 
 Other folder functions: 
 \code{\link{gtm_folders_create}()},

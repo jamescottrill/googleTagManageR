@@ -32,7 +32,7 @@ folder <- gtm_folders_revert(accountId, containerId, workspaceId, folderId)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/revert}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/revert}
 
 Other folder functions: 
 \code{\link{gtm_folders_create}()},

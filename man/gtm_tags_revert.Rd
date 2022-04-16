@@ -33,7 +33,7 @@ tag <- gtm_tags_revert(accountId, containerId, workspaceId, tagId)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/revert}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/revert}
 
 Other tag functions: 
 \code{\link{gtm_tags_create}()},

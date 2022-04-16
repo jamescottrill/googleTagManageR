@@ -1,6 +1,6 @@
 #' List all zones in a workspace
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/list}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/list}
 #' @family zone functions
 #' 
 #' @description
@@ -43,7 +43,7 @@ gtm_zones_list <- function(account_id, container_id, workspace_id) {
 
 #' List a single zone in a workspace
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/get}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/get}
 #' @family zone functions
 #' 
 #' @description
@@ -93,7 +93,7 @@ gtm_zones_get <- function(account_id,container_id,workspace_id,zone_id) {
 
 #' Create a new zone
 #'
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/create}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/create}
 #' @family zone functions
 #' 
 #' @description
@@ -154,7 +154,7 @@ gtm_zones_create <- function(account_id,container_id,workspace_id,zone_object) {
 
 #' Update an existing zone
 #'
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/update}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/update}
 #' @family zone functions
 #' 
 #' @description
@@ -191,7 +191,7 @@ gtm_zones_update <- function(account_id,container_id, workspace_id,zone_id,zone_
 
 #' Delete a zone
 #'
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/delete}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/delete}
 #' @family zone functions
 #' @importFrom utils menu
 #' 
@@ -263,7 +263,7 @@ gtm_zones_delete <- function(account_id, container_id, workspace_id, zone_id, fo
 
 #' Reverts a zone to its original state
 #'
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/revert}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/revert}
 #' @family zone functions
 #' 
 #' @description

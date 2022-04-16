@@ -30,7 +30,7 @@ triggers <- gtm_triggers_list(accountId, containerId, workspaceId)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/list}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/list}
 
 Other trigger functions: 
 \code{\link{gtm_triggers_create}()},

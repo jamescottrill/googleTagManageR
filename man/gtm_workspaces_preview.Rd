@@ -34,7 +34,7 @@ preview <- gtm_workspaces_preview(accountId, containerId, workspaceId)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/quick_preview}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/quick_preview}
 
 Other workspace functions: 
 \code{\link{gtm_workspaces_create}()},

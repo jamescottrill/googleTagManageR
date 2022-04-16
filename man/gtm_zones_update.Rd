@@ -21,7 +21,7 @@ gtm_zones_update(account_id, container_id, workspace_id, zone_id, zone_object)
 This takes a zone resource and overwrites the existing zone in GTM
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/update}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/update}
 
 Other zone functions: 
 \code{\link{gtm_zones_create}()},

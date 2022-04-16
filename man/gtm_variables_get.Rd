@@ -33,7 +33,7 @@ variable <- gtm_variables_get(accountId, containerId, workspaceId, variableId)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/get}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/get}
 
 Other variable functions: 
 \code{\link{gtm_variables_create}()},

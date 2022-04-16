@@ -55,7 +55,7 @@ updatedTag <- gtm_tags_update(accountId, containerId, workspaceId, tagId, tag)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/update}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/update}
 
 Other tag functions: 
 \code{\link{gtm_tags_create}()},

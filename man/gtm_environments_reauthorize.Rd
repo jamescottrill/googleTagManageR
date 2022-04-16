@@ -39,7 +39,7 @@ env <- gtm_environments_reauthorize(accountId, containerId, enviromentId)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/environments/reauthorize}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/environments/reauthorize}
 
 Other environment functions: 
 \code{\link{gtm_environments_create}()},

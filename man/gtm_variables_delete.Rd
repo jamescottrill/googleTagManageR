@@ -55,7 +55,7 @@ gtm_variables_delete(accountId, containerId, workspaceId, variableId, "TRUE")
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/delete}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/delete}
 
 Other variable functions: 
 \code{\link{gtm_variables_create}()},

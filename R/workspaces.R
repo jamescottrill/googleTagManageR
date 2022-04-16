@@ -1,6 +1,6 @@
 #' List all workspaces a user has accesss to 
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/list}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/list}
 #' @family workspace functions
 #' 
 #' @description
@@ -41,7 +41,7 @@ gtm_workspaces_list <- function(account_id, container_id) {
 
 #' Get workspace metadata
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/get}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/get}
 #' @family workspace functions
 #' 
 #' @param account_id Account Id
@@ -86,7 +86,7 @@ gtm_workspaces_get <- function(account_id, container_id, workspace_id) {
 
 #' Create a new workspace
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/create}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/create}
 #' @family workspace functions
 #' 
 #' @param account_id Account Id
@@ -138,7 +138,7 @@ gtm_workspaces_create <- function(account_id, container_id, name, description = 
 
 #' Update a workspace
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/update}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/update}
 #' @family workspace functions
 #' 
 #' @param account_id Account Id
@@ -199,7 +199,7 @@ gtm_workspaces_update <- function(account_id, container_id, workspace_id, name, 
 
 #' Delete a workspace
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/delete}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/delete}
 #' @family workspace functions
 #' 
 #' @param account_id Account Id
@@ -281,7 +281,7 @@ gtm_workspaces_delete <- function(account_id, container_id, workspace_id, force 
 
 #' See workspace changes
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/getStatus}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/getStatus}
 #' @family workspace functions
 #' 
 #' @param account_id Account Id
@@ -326,7 +326,7 @@ gtm_workspaces_status <- function(account_id,container_id,workspace_id) {
 
 #' Create a new container version
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/create_version}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/create_version}
 #' @family workspace functions
 #' 
 #' @param account_id Account Id
@@ -393,7 +393,7 @@ gtm_workspaces_submit <- function(account_id, container_id, workspace_id, name, 
 
 #' Preview the compilation of a container version
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/quick_preview}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/quick_preview}
 #' @family workspace functions
 #' 
 #' @param account_id Account Id
@@ -453,7 +453,7 @@ gtm_workspaces_preview<-function(account_id,container_id,workspace_id){
 
 #' Bring a workspace in line with the latest version
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/sync}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/sync}
 #' @family workspace functions
 #' 
 #' @param account_id Account Id
@@ -501,7 +501,7 @@ gtm_workspaces_sync <- function(account_id,container_id,workspace_id) {
 
 #' Resolve workspace conflicts
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/resolve_conflict}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/resolve_conflict}
 #' @family workspace functions
 #' 
 #' @param account_id Account Id

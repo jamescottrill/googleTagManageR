@@ -33,7 +33,7 @@ variable <- gtm_variables_revert(accountId, containerId, workspaceId, variableId
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/revert}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/variables/revert}
 
 Other variable functions: 
 \code{\link{gtm_variables_create}()},
