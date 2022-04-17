@@ -51,7 +51,7 @@ gtm_workspaces_delete(accountId, containerId, workspaceId, "TRUE")
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/delete}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/delete}
 
 Other workspace functions: 
 \code{\link{gtm_workspaces_create}()},

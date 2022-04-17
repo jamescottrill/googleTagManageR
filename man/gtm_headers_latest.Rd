@@ -29,7 +29,7 @@ latestHeader <- gtm_headers_latest(accountId, containerId)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/version_headers/latest}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/version_headers/latest}
 
 Other version header functions: 
 \code{\link{gtm_headers_list}()}

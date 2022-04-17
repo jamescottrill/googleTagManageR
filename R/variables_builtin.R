@@ -1,6 +1,6 @@
 #' List all built-in variables
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/built_in_variables/list}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/built_in_variables/list}
 #' @family built in variable functions
 #' 
 #' @description
@@ -45,7 +45,7 @@ gtm_builtin_list <- function(account_id, container_id, workspace_id) {
 
 #' Enable a built-in variable
 #'
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/built_in_variables/create}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/built_in_variables/create}
 #' @family built in variable functions
 #' 
 #' @description
@@ -107,7 +107,7 @@ gtm_builtin_create <- function(account_id, container_id, workspace_id, variable)
 
 #' Disable a built-in variable
 #'
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/built_in_variables/delete}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/built_in_variables/delete}
 #' @family built in variable functions
 #' 
 #' @description
@@ -169,7 +169,7 @@ gtm_builtin_delete <- function(account_id, container_id, workspace_id, variable)
 
 #' Reverts changes to a GTM Built-In Variables in a GTM Workspace
 #'
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/built_in_variables/revert}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/built_in_variables/revert}
 #' @family built in variable functions
 #' 
 #' @description

@@ -23,7 +23,7 @@ account <- gtm_accounts_get(account_id)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/get}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/get}
 
 Other account functions: 
 \code{\link{gtm_accounts_list}()},

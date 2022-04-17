@@ -30,7 +30,7 @@ folders <- gtm_folders_list(accountId, containerId, workspaceId)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/list}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/list}
 
 Other folder functions: 
 \code{\link{gtm_folders_create}()},

@@ -53,7 +53,7 @@ newTag <- gtm_tags_create(accountId, containerId, workspaceId, tag)
 }
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/create}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/create}
 
 Other tag functions: 
 \code{\link{gtm_tags_delete}()},

@@ -37,7 +37,7 @@ container <- gtm_containers_create(accountId, newName, 'web')
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/create}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/create}
 
 Other container functions: 
 \code{\link{gtm_containers_delete}()},

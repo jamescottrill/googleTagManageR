@@ -1,6 +1,6 @@
 #' List all container versions of a GTM container
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/version_headers/list}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/version_headers/list}
 #' @family version header functions
 #' 
 #' @description
@@ -54,7 +54,7 @@ gtm_headers_list <- function(account_id, container_id, includeDeleted=c("TRUE","
 
 #'Gets the latest container version header
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/version_headers/latest}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/version_headers/latest}
 #' @family version header functions
 #' 
 #' @description

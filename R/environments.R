@@ -1,6 +1,6 @@
 #' List the containers
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/environments/list}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/environments/list}
 #' @family environment functions
 #' 
 #' @param account_id Account Id
@@ -39,7 +39,7 @@ gtm_environments_list <- function(account_id,container_id) {
 
 #' This gets the metadata for a single GTM Environment
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/environments/get}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/environments/get}
 #' @family environment functions
 #' 
 #' @param account_id Account Id
@@ -80,7 +80,7 @@ gtm_environments_get <- function(account_id,container_id,environment_id){
 
 #' Create an environment
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/environments/update}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/environments/update}
 #' @family environment functions
 #' 
 #' @param account_id Account Id
@@ -142,7 +142,7 @@ gtm_environments_create <- function(account_id, container_id, name, description 
 
 #' Update an environment
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/environments/update}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/environments/update}
 #' @family environment functions
 #' 
 #' @param account_id Account Id
@@ -201,7 +201,7 @@ gtm_environments_update <- function(account_id, container_id ,environment_id, na
 
 #' Delete an environment
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/environments/reauthorize}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/environments/reauthorize}
 #' @family environment functions
 #' @importFrom utils menu
 #' 
@@ -282,7 +282,7 @@ gtm_environments_delete <- function(account_id, container_id, environment_id, fo
 
 #' Reauthorise an existing GTM environment
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/environments/reauthorize}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/environments/reauthorize}
 #' @family environment functions
 #' 
 #' @param account_id Account Id

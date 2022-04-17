@@ -26,7 +26,7 @@ container <- gtm_containers_get(accountId, containerId)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/get}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/get}
 
 Other container functions: 
 \code{\link{gtm_containers_create}()},

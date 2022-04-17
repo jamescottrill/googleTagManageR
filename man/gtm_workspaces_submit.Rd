@@ -43,7 +43,7 @@ workspace <- gtm_workspaces_update(accountId, containerId, workspaceId, name, no
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/create_version}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/create_version}
 
 Other workspace functions: 
 \code{\link{gtm_workspaces_create}()},

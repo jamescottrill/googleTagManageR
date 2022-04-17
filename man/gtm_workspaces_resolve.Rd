@@ -111,7 +111,7 @@ for(i in 1:nrow(mergeConflicts$mergeConflict$entityInWorkspace)){
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/resolve_conflict}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/resolve_conflict}
 
 Other workspace functions: 
 \code{\link{gtm_workspaces_create}()},

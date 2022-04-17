@@ -44,7 +44,7 @@ folder <- gtm_folders_update(accountId, containerId, workspaceId, folderName, fo
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/update}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/folders/update}
 
 Other folder functions: 
 \code{\link{gtm_folders_create}()},

@@ -43,7 +43,7 @@ gtm_environments_update(accountId, containerId, "Pre-Prod", url="https://new-pp.
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/environments/update}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/environments/update}
 
 Other environment functions: 
 \code{\link{gtm_environments_create}()},

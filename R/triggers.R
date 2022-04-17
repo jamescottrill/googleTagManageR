@@ -1,6 +1,6 @@
 #' List all triggers in a workspace
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/list}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/list}
 #' @family trigger functions
 #' 
 #' @description
@@ -45,7 +45,7 @@ gtm_triggers_list <- function(account_id, container_id, workspace_id) {
 
 #' List a single trigger in a workspace
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/get}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/get}
 #' @family trigger functions
 #' 
 #' @description
@@ -92,8 +92,8 @@ gtm_triggers_get <- function(account_id, container_id, workspace_id, trigger_id)
 
 #' Create a new trigger
 #'
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/create}
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers#resource}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/create}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers#resource}
 #' @family trigger functions
 #' 
 #' @description
@@ -171,7 +171,7 @@ gtm_triggers_create <- function(account_id, container_id, workspace_id, trigger_
 
 #' Update an existing trigger
 #'
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/update}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/update}
 #' @family trigger functions
 #' 
 #' @description
@@ -245,7 +245,7 @@ gtm_triggers_update <- function(account_id, container_id, workspace_id, trigger_
 
 #' Delete a trigger
 #'
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/delete}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/delete}
 #' @family trigger functions
 #' 
 #' @description
@@ -329,7 +329,7 @@ gtm_triggers_delete <- function(account_id, container_id, workspace_id, trigger_
 
 #' Reverts a trigger to its original state
 #'
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/revert}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers/revert}
 #' @family trigger functions
 #' 
 #' @description

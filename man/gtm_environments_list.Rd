@@ -25,7 +25,7 @@ environments <- gtm_environments_list(accountId, containerId)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/environments/list}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/environments/list}
 
 Other environment functions: 
 \code{\link{gtm_environments_create}()},

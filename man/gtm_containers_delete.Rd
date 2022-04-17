@@ -52,7 +52,7 @@ gtm_containers_delete(accountId, containerId)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/delete}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/delete}
 
 Other container functions: 
 \code{\link{gtm_containers_create}()},

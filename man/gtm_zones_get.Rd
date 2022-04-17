@@ -32,7 +32,7 @@ zone <- gtm_zones_get(accountId, containerId, workspaceId, zoneId)
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/get}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/zones/get}
 
 Other zone functions: 
 \code{\link{gtm_zones_create}()},

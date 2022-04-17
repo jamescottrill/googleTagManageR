@@ -1,6 +1,6 @@
 #' List all tags in a workspace
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/list}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/list}
 #' @family tag functions
 #' 
 #' @description
@@ -43,7 +43,7 @@ gtm_tags_list <- function(account_id, container_id, workspace_id) {
 
 #' Get one tag in a workspace
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/get}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/get}
 #' @family tag functions
 #' 
 #' @description
@@ -92,7 +92,7 @@ gtm_tags_get <- function(account_id,container_id,workspace_id,tag_id) {
 
 #' Create a new tag
 #'
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/create}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/create}
 #' @family tag functions
 #' 
 #' @description
@@ -165,7 +165,7 @@ gtm_tags_create <- function(account_id,container_id,workspace_id,tag_object) {
 
 #' Update an existing tag
 #'
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/update}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/update}
 #' @family tag functions
 #' 
 #' @description
@@ -238,7 +238,7 @@ gtm_tags_update <- function(account_id, container_id, workspace_id, tag_id, tag_
 
 #' Delete a tag
 #'
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/delete}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/delete}
 #' @family tag functions
 #' @importFrom utils menu
 #' 
@@ -324,7 +324,7 @@ gtm_tags_delete <-function(account_id, container_id, workspace_id, tag_id, force
 
 #' Reverts a tag,
 #'
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/revert}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/tags/revert}
 #' @family tag functions
 #' 
 #' @description
